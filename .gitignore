@@ -1,0 +1,15 @@
+# Ignore everything in this directory
+
+/client/aframe
+/client/aframe-environment-component
+/client/aframe-extras
+/client/aframe-physics-system
+/client/aframe-forcegraph-component
+node_modules/
+app.js
+package-lock.json
+package.json
+
+# Except this file
+
+!.gitignore

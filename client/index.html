@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test VR App</title>
+    <meta name="description" content="Test VR app">
+    <script src="client/aframe/dist/aframe-v1.3.0.min.js"></script>
+    <script src="client/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="client/aframe-extras/dist/aframe-extras.min.js"></script>
+
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+    <script src="client/aframe-physics-system/dist/aframe-physics-system.js"></script>
+    <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+    <script src="client/aframe-forcegraph-component/dist/aframe-forcegraph-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
+      
+      <!-- Basic movement and teleportation  -->
+      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
+        <!-- camera -->
+        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" ></a-entity>
+              <!-- Left Controller  -->
+              <!-- a-entity class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
+              
+              <a-entity class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #15ACCF" laser-controls raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: lawngreen; opacity: 0.5" visible="true"></a-entity-->
+              <a-entity sphere-collider="objects: a-sphere" super-hands hand-controls="hand: left" class="leftController"></a-entity>
+              <a-entity sphere-collider="objects: a-sphere" super-hands hand-controls="hand: right" class='rightController'></a-entity>
+      </a-entity>
+
+      <a-plane ammo-body="type: static" ammo-shape="type: box"></a-plane>
+      <a-sphere ammo-body="type: dynamic" ammo-shape="type: box" grabbable position="0 0.751 -0.3" radius="0.1" color="#EF2D5E" transparent="true" shadow
+        ondragenter="this.setAttribute('opacity', 0.5)"
+        ondragleave="this.setAttribute('opacity', 1)"
+        onmousedown="this.setAttribute('wireframe', true)"
+        onclick="this.setAttribute('wireframe', false)">
+      </a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.05" height="1.5" color="#FFC65D" shadow></a-cylinder>
+      <a-plane position="0 0.001 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+
+      <a-entity environment="preset: default"></a-entity>
+      <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
+
+      <a-entity forcegraph="json-url: client/graph.json; num-dimensions: 2; node-rel-size: 1" position="0 0.001 -4" shadow scale="0.5 0.5 0.5"> </a-entity>
+      
+    </a-scene>
+  </body>
+</html>
