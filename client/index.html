@@ -25,11 +25,17 @@
                 colliderEventProperty:els;
                 colliderEndEvent:raycaster-intersection-cleared;
                 colliderEndEventProperty:clearedEls;
-              ">
+              "
+              teleport-controls="cameraRig: #cameraRig;
+                teleportOrigin: #head;
+                button: trigger; 
+                curveShootingSpeed: 18; 
+                landingMaxAngle: 60" 
+                visible="true">
       </a-mixin>
       
       <!-- Basic movement and teleportation  -->
-      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
+      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" wasd-controls="fly: true; acceleration: 100;" position="0 0 0" rotation="0 0 0">
         <!-- camera -->
         <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" ></a-entity>
               <!-- Left Controller  -->
@@ -40,7 +46,7 @@
               <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller"></a-entity>
               <a-text
                 id="forcegraph-tooltip"
-                position= #head
+                position= "0 0 0"
                 width="2"
                 color="lavender"
               ></a-text>
@@ -61,18 +67,19 @@
       <a-entity environment="preset: default"></a-entity>
       <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
 
-      <a-entity forcegraph="json-url: client/graph_base.json; num-dimensions: 3; node-rel-size: 1; node-opacity: 1; 
+      <a-entity forcegraph="json-url: client/graph_base.json; num-dimensions: 3; node-rel-size: 1; node-opacity: 1; node-resolution: 12; 
                             link-opacity: 0.25; link-width:0;
                             on-node-click: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', `Clicked on ${node.id}!`);" 
-        position="0 0.5 1" shadow scale="0.15 0.15 0.15"> 
+        position="0 0.5 1" shadow scale="0.1 0.1 0.1"> 
       </a-entity>
 
       <a-entity
-        position="0 2 -8"
+        position="0 4 -20"
         geometry="primitive: plane; width: 5"
         material="color: #333333"
         text="color: white; anchor: center; font: sourcecodepro;
               value: ----- Digital Creativity Test App ------"
+        scale= "3 3 3"
       ></a-entity>
     </a-scene>
   </body>
