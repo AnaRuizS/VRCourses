@@ -98,17 +98,16 @@
                             link-opacity: 0.25; 
                             link-width:0;
                             node-auto-color-by: type;
-                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} \n (${node.type})` : 'Hover for node info'); 
-                            on-node-click: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `clicked` :'');"
+                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} \n (${node.type})` : 'Hover for node info');"
         position="0 0.5 1" shadow scale="0.1 0.1 0.1"> 
       </a-entity>
 
       <a-entity
         position="0 4 -20"
-        geometry="primitive: plane; width: 5"
+        geometry="primitive: plane; height:1.5; width: 5"
         material="color: #333333"
         text="color: white; anchor: center; font: sourcecodepro;
-              value: ----- Digital Creativity Test App ------"
+              value: ----- Digital Creativity Test App ------ \n ---> WEEK 1: Anne Carson"
         scale= "3 3 3"
       ></a-entity>
     </a-scene>
