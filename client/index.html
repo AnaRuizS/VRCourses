@@ -7,6 +7,8 @@
     <script src="client/aframe/dist/aframe-v1.3.0.min.js"></script>
     <script src="client/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="client/aframe-extras/dist/aframe-extras.min.js"></script>
+    <script
+        src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="client/aframe-physics-system/dist/aframe-physics-system.js"></script>
@@ -29,20 +31,31 @@
       </a-entity>
 
       <a-plane ammo-body="type: static" ammo-shape="type: box"></a-plane>
-      <a-sphere ammo-body="type: dynamic" ammo-shape="type: box" grabbable position="0 0.751 -0.3" radius="0.1" color="#EF2D5E" transparent="true" shadow
+      <!-- grabbable sphere
+        <a-sphere ammo-body="type: dynamic" ammo-shape="type: box" grabbable position="0 0.751 -0.3" radius="0.1" color="#EF2D5E" transparent="true" shadow
         ondragenter="this.setAttribute('opacity', 0.5)"
         ondragleave="this.setAttribute('opacity', 1)"
         onmousedown="this.setAttribute('wireframe', true)"
         onclick="this.setAttribute('wireframe', false)">
       </a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.05" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0.001 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+      -->
 
       <a-entity environment="preset: default"></a-entity>
       <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
 
-      <a-entity forcegraph="json-url: client/graph.json; num-dimensions: 2; node-rel-size: 1" position="0 0.001 -4" shadow scale="0.01 0.01 0.01"> </a-entity>
-      
+      <a-entity forcegraph="json-url: client/graph_base.json; num-dimensions: 3; node-rel-size: 1; node-opacity: 1; 
+                            link-opacity: 1; link-width:0;
+                            on-node-click: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', `Clicked on ${node.id}!`);" 
+        position="0 0.5 1" shadow scale="0.15 0.15 0.15"> 
+      </a-entity>
+
+      <a-entity
+        position="0 2 -4"
+        geometry="primitive: plane; width: 5"
+        material="color: #333333"
+        text="color: white; anchor: center; font: sourcecodepro;
+              value: ----- Digital Creativity Test App ------"
+      ></a-entity>
     </a-scene>
   </body>
 </html>
