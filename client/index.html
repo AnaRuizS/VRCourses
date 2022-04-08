@@ -19,7 +19,7 @@
     <a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
 
       <a-mixin id="controller-r"
-              raycaster="objects: [forcegraph]; showLine: true"
+              
               super-hands="
                 colliderEvent:raycaster-intersection;
                 colliderEventProperty:els;
@@ -35,18 +35,14 @@
       </a-mixin>
       
       <a-mixin id="controller-l"
+              raycaster="objects: [forcegraph]; showLine: true"
               super-hands="
                 colliderEvent:raycaster-intersection;
                 colliderEventProperty:els;
                 colliderEndEvent:raycaster-intersection-cleared;
                 colliderEndEventProperty:clearedEls;
               "
-              teleport-controls="cameraRig: #cameraRig;
-                teleportOrigin: #head;
-                button: trigger; 
-                curveShootingSpeed: 18; 
-                landingMaxAngle: 60" 
-                visible="true">
+      >
       </a-mixin>
       
       <!-- Basic movement and teleportation  -->
@@ -55,7 +51,7 @@
         <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" >
           <a-text
             id="forcegraph-tooltip"
-            position="-0.65 -0.6 -1.5"
+            position="-0.75 -0.6 -1.5"
             width="1"
             color="white"
             value="Hover for node info"
@@ -63,7 +59,7 @@
           ></a-text>
           <a-entity
             position="-0.4 -0.65 -1.5"
-            geometry="primitive: plane; height: 0.25; width: 0.75"
+            geometry="primitive: plane; height: 0.25; width: 0.9"
             material="color: #333333"
             text="color: white; anchor: left; font: sourcecodepro;"
             rotation="-45 0 0"
