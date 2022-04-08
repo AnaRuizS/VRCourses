@@ -44,7 +44,7 @@
       <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
 
       <a-entity forcegraph="json-url: client/graph_base.json; num-dimensions: 3; node-rel-size: 1; node-opacity: 1; 
-                            link-opacity: 1; link-width:0;
+                            link-opacity: 0.25; link-width:0;
                             on-node-click: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', `Clicked on ${node.id}!`);" 
         position="0 0.5 1" shadow scale="0.15 0.15 0.15"> 
       </a-entity>
