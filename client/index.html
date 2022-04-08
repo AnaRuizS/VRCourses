@@ -19,7 +19,7 @@
     <a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
 
       <a-mixin id="controller"
-              raycaster="objects: .sphere; showLine: true"
+              raycaster="objects: [forcegraph]; showLine: true"
               super-hands="
                 colliderEvent:raycaster-intersection;
                 colliderEventProperty:els;
@@ -35,7 +35,7 @@
       </a-mixin>
       
       <!-- Basic movement and teleportation  -->
-      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" wasd-controls="fly: true; acceleration: 100;" position="0 0 0" rotation="0 0 0">
+      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
         <!-- camera -->
         <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" ></a-entity>
               <!-- Left Controller  -->
@@ -46,8 +46,8 @@
               <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller"></a-entity>
               <a-text
                 id="forcegraph-tooltip"
-                position= "0 0 0"
-                width="2"
+                position= "0 2 0"
+                width="4"
                 color="lavender"
               ></a-text>
       </a-entity>
