@@ -40,16 +40,18 @@
         <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" >
           <a-text
             id="forcegraph-tooltip"
-            position="-0.6 -0.7 -2"
+            position="-0.9 -0.7 -1.5"
             width="1"
             color="white"
-            value="Tooltip"
+            value="Hover for node info"
+            rotation="-30 0 0"
           ></a-text>
           <a-entity
-            position="-0.5 -1.1 -2"
-            geometry="primitive: plane; width: 0.5"
+            position="-0.5 -0.75 -1.5"
+            geometry="primitive: plane; height: 0.25; width: 1"
             material="color: #333333"
             text="color: white; anchor: left; font: sourcecodepro;"
+            rotation="-30 0 0"
           ></a-entity>
         </a-entity>
               <!-- Left Controller  -->
@@ -85,7 +87,7 @@
                             link-opacity: 0.25; 
                             link-width:0;
                             node-auto-color-by: type;
-                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} (${node.type})` : '');" 
+                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} \n (${node.type})` : '');" 
         position="0 0.5 1" shadow scale="0.1 0.1 0.1"> 
       </a-entity>
 
