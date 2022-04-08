@@ -44,13 +44,13 @@
               <a-entity class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #15ACCF" laser-controls raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: lawngreen; opacity: 0.5" visible="true"></a-entity-->
               <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller"></a-entity>
               <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller"></a-entity>
-              <a-entity
+              <a-text
                 id="forcegraph-tooltip"
-                position="0 2 0"
-                geometry="primitive: plane; width: 4"
-                material="color: lavender"
-                text="color: white; anchor: center; font: sourcecodepro;"
-              ></a-entity>
+                position="0 -0.25 -1"
+                width="2"
+                align="center"
+                color="white"
+              ></a-text>
       </a-entity>
 
       <!-- static plane
@@ -76,7 +76,7 @@
                             link-opacity: 0.25; 
                             link-width:0;
                             node-auto-color-by: type;
-                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('text', `color: white; anchor: center; font: sourcecodepro; value: Clicked on ${node.id}!`);" 
+                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} (${node.type})` : '');" 
         position="0 0.5 1" shadow scale="0.1 0.1 0.1"> 
       </a-entity>
 
