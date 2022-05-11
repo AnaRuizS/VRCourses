@@ -1,10 +1,6 @@
 # Ignore everything in this directory
 
-/client/aframe
-/client/aframe-environment-component
-/client/aframe-extras
-/client/aframe-physics-system
-/client/aframe-forcegraph-component
+/client/lib/
 node_modules/
 app.js
 package-lock.json
