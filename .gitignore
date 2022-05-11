@@ -9,6 +9,8 @@ node_modules/
 app.js
 package-lock.json
 package.json
+server.key
+server.cert
 
 # Except this file
 

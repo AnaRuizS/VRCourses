@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
+
+    <a-entity laser-controls="hand: right"></a-entity>
+    <a-entity environment="preset: default"></a-entity>
+    <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
+
+    <!-- BASE PLATE FOR DISTANCE DESIGN 2m arm reach, 1m free space, 4m far-->
+    <a-cylinder color="cyan" height="0.05" radius="4" position="0 0 0"></a-cylinder>   
+    <a-cylinder color="gray" height="0.1" radius="2" position="0 0 0"></a-cylinder>
+    <a-cylinder color="crimson" height="0.15" radius="1" position="0 0 0"></a-cylinder>
+    <!-- END OF BASE PLATE  -->
+
+    <!-- current node view -->
+    <a-sphere color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
+
+    <!-- node search view -->
+    <a-keyboard is_open='true' position="-1.1 1 -1.5" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
+    <a-input name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
+    <a-button position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+    <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
+
+    <!-- NODE INFO VIEW -->
+    <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
+    <a-rounded color="#cccccc" opacity='0.9' position="0.75 1 2" width="1" height="1" radius="0.05" rotation="0 45 0"></a-rounded>
+    <a-rounded color="#cccccc" opacity='0.9' position="-0.5 1 2" width="1" height="1" radius="0.05" rotation="0 0 0"></a-rounded>
+
+</a-scene>
+<script type="text/javascript">
+    let var1=document.getElementsByTagName('input1')[0];
+    console.log(var1);
+</script>
+
+<%- include('partials/footer') %>
