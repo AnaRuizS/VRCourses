@@ -1,0 +1,17 @@
+<!-- BEGIN FORM -->
+<a-rounded color="#000000" opacity='0.8' position="-0.5 1.5 -2" width="4" height="1.5" radius="0.05" rotation="0 0 0" scale="0.3 0.3 0.3">
+        <a-form>
+            <a-input position="0.5 1.1 0" placeholder="Search for node" color="black" width="1.8"></a-input>
+            <a-button position="2.5 1.1 0" name="search" value="Explore" type="flat"></a-button>
+        </a-form>
+</a-rounded>
+<!-- END FORM --> 
+
+<!-- SHOW DATA WITHIN AN ENTITY OR HTML TAG -->
+<h1> Movies</h1>
+<p>Listo!</p>
+<ul>
+    <% movies.forEach(function(movie){ %>
+        <li><%= movie.title %></li>
+    <% }) %>
+</ul>
