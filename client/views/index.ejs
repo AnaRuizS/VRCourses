@@ -103,8 +103,8 @@
     });
 
     button.addEventListener('click', ()=> {
-        var a = nodeOptions(input1.value);
-        document.querySelector('#forcegraph-tooltip').setAttribute('value', a);
+        window.single_node = `<%- nodeOptions('`+input1.value+`') %>`;
+        //document.querySelector('#forcegraph-tooltip').setAttribute('value', a);
     });
 
 </script>
