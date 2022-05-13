@@ -87,8 +87,8 @@
 
 </a-scene>
 <script type="text/javascript">
-    let input1=document.getElementsByTagName('input1');
-    let button = document.querySelector('#go_button');
+    var input1= document.getElementsByTagName('input1');
+    var button = document.querySelector('#go_button');
     var str="";
     let keyboard = document.querySelector("a-keyboard");
 
@@ -98,9 +98,9 @@
     });
 
     button.addEventListener('click', ()=> {
-        document.querySelector('#forcegraph-tooltip').setAttribute('value', input1[0].value ? `${input1[0]}`: "no value");
+        document.querySelector('#forcegraph-tooltip').setAttribute('value', 'clicked');
     });
-    
+
 </script>
 
 <%- include('partials/footer') %>
