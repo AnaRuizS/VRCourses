@@ -19,7 +19,7 @@
     </a-mixin>
       
     <a-mixin id="controller-r"
-              raycaster="objects: [forcegraph]; showLine: true"
+              raycaster="objects: [forcegraph], a-input, a-keyboard, a-button; showLine: true"
               super-hands="
                 colliderEvent:raycaster-intersection;
                 colliderEventProperty:els;
@@ -72,8 +72,8 @@
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
-    <a-keyboard is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
-    <a-input name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
+    <a-keyboard class="collides" is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
+    <a-input class="collides" name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
     <a-button position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
 
