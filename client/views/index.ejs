@@ -87,12 +87,19 @@
 
 </a-scene>
 <script type="text/javascript">
-    let var1=document.getElementsByTagName('input1')[0];
-    document.querySelector('#forcegraph-tooltip').setAttribute('value', var1 ? `${var1}` : 'Hover for node info');
+    let input1=document.getElementsByTagName('input1');
+    let button = document.querySelector('a-button');
+    var str="";
     let keyboard = document.querySelector("a-keyboard");
     keyboard.addEventListener('input', (e)=>{
         str += e.detail;
+        input1.setAttribute('value', str);
     });
+    
+    button.addEventListener('click', ()=> {
+        document.querySelector('#forcegraph-tooltip').setAttribute('value', input1[0].value ? `${input1[0]}`: "no value");
+    });
+    
 </script>
 
 <%- include('partials/footer') %>
