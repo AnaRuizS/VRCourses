@@ -105,7 +105,6 @@
     button.addEventListener('click', ()=> {
         fetch('/node_search', {
                 method: 'POST',
-                headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({input: input1.value})
             })
             .then(res=>res.json())
