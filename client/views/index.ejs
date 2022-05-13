@@ -54,10 +54,13 @@
               <!-- a-entity class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
               
               <a-entity class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #15ACCF" laser-controls raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: lawngreen; opacity: 0.5" visible="true"></a-entity-->
-        <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller-l"></a-entity>
-        <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller-r"></a-entity>
+        <!-- <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller-l"></a-entity>
+        <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller-r"></a-entity> -->
+
+        <a-entity laser-controls="hand: right"></a-entity>
         
       </a-entity>
+
     <a-entity environment="preset: default"></a-entity>
     <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
 
@@ -72,9 +75,9 @@
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
-    <a-keyboard class="collides" clickable hoverable is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
-    <a-input class="collides" clickable hoverable name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
-    <a-button clickable hoverable position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+    <a-keyboard is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
+    <a-input name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
+    <a-button position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
