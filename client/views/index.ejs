@@ -97,7 +97,13 @@
         input1.setAttribute('value', str);
     });
 
+    keyboard.addEventListener('backspace', (e)=>{
+        str = str.slice(0, -1);
+        input1.setAttribute('value', str);
+    });
+
     button.addEventListener('click', ()=> {
+        nodeOptions(input1.value);
         document.querySelector('#forcegraph-tooltip').setAttribute('value', input1.value);
     });
 
