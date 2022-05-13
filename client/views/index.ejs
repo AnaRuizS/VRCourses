@@ -103,7 +103,7 @@
     });
 
     button.addEventListener('click', ()=> {
-        window.single_node = `<%- nodeOptions%>`;
+        window.single_node = `<%- nodeOptions(input1.value)%>`;
         console.log(window.single_node);
     });
 
