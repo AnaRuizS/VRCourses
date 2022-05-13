@@ -103,8 +103,8 @@
     });
 
     button.addEventListener('click', ()=> {
-        nodeOptions(input1.value);
-        document.querySelector('#forcegraph-tooltip').setAttribute('value', input1.value);
+        var a = nodeOptions(input1.value);
+        document.querySelector('#forcegraph-tooltip').setAttribute('value', a ? `${a}` : "error");
     });
 
 </script>
