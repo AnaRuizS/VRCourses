@@ -77,7 +77,7 @@
     <!-- node search view -->
     <a-keyboard is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
     <a-input name='input1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
-    <a-button position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+    <a-button id="go_button" position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
@@ -88,14 +88,15 @@
 </a-scene>
 <script type="text/javascript">
     let input1=document.getElementsByTagName('input1');
-    let button = document.querySelector('a-button');
+    let button = document.querySelector('#go_button');
     var str="";
     let keyboard = document.querySelector("a-keyboard");
+
     keyboard.addEventListener('input', (e)=>{
         str += e.detail;
         input1.setAttribute('value', str);
     });
-    
+
     button.addEventListener('click', ()=> {
         document.querySelector('#forcegraph-tooltip').setAttribute('value', input1[0].value ? `${input1[0]}`: "no value");
     });
