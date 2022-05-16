@@ -34,7 +34,8 @@
     <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
         <!-- camera -->
         <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" >
-          <a-text
+          <!-- INFO TOOLTIP- STICK TO CAMERA VIEW -->
+          <!--<a-text
             id="forcegraph-tooltip"
             position="-0.75 -1 -1.7"
             width="1"
@@ -48,7 +49,7 @@
             material="color: #333333"
             text="color: white; anchor: left; font: sourcecodepro;"
             rotation="-45 0 0"
-          ></a-entity>
+          ></a-entity>-->
         </a-entity>
               <!-- Left Controller  -->
               <!-- a-entity class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
@@ -71,7 +72,13 @@
     <!-- END OF BASE PLATE  -->
 
     <!-- current node view -->
-    <a-sphere color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-sphere visible= "true" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-text
+        position="-0.5 1.3 1.5"
+        width="1"
+        color="white"
+        value="NO NODE SELECTED"
+    ></a-text>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
