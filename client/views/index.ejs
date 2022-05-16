@@ -61,10 +61,13 @@
         <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
         <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'>
             <a-circle
+                id="mode-1"
                 color="black"
                 radius="0.05"
-                position="-0.05 0 0"
+                position="-0.03 0 0.01"
                 rotation="0 -90 0"
+                theta-start="0"
+                theta-lenght="90"
             >
             </a-circle>
         </a-entity>
