@@ -58,7 +58,7 @@
         <!-- <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller-l"></a-entity>
         <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller-r"></a-entity> -->
 
-        <a-entity id="rightController" raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
+        <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
         <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'></a-entity>
         
       </a-entity>
