@@ -58,7 +58,8 @@
         <!-- <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller-l"></a-entity>
         <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller-r"></a-entity> -->
 
-        <a-entity laser-controls="hand: right"></a-entity>
+        <a-entity laser-controls raycaster="showLine: true; far:10" hand_controls="hand: right; handModelStyle: lowPoly; color: #15ACCF"></a-entity>
+        <a-entity laser-controls hand_controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60"></a-entity>
         
       </a-entity>
 
@@ -72,16 +73,15 @@
     <!-- END OF BASE PLATE  -->
 
     <!-- current node view -->
-    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow>
-        <a-text
+    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-text
         id ="current_node_label"
         position="0.2 1.1 1.49"
         width="1"
         color="white"
         value="NO NODE SELECTED"
         rotation="0 180 0"
-        ></a-text>
-    </a-sphere>
+    ></a-text>
     <a-toast autoshow= 'false' message="" position="0 1.4 1" action="Got it"></a-toast>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
