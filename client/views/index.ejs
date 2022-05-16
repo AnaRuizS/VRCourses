@@ -33,7 +33,7 @@
     <!-- BASIC CAMERA AND MOTION SETTINGS -->
     <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
         <!-- camera -->
-        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" >
+        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true">
           <!-- INFO TOOLTIP- STICK TO CAMERA VIEW -->
           <!--<a-text
             id="forcegraph-tooltip"
@@ -51,7 +51,7 @@
             rotation="-45 0 0"
           ></a-entity>-->
 
-          <a-toast message="Node found!" action="Got it"></a-toast>
+          <a-toast autoshow= 'false' message="Node found!" position="0 1.4 1" action="Got it"></a-toast>
 
         </a-entity>
               <!-- Left Controller  -->
