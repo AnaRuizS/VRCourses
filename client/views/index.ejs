@@ -50,9 +50,6 @@
             text="color: white; anchor: left; font: sourcecodepro;"
             rotation="-45 0 0"
           ></a-entity>-->
-
-          <a-toast autoshow= 'false' message="Node found!" position="0 1.4 1" action="Got it"></a-toast>
-
         </a-entity>
               <!-- Left Controller  -->
               <!-- a-entity class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
@@ -75,15 +72,17 @@
     <!-- END OF BASE PLATE  -->
 
     <!-- current node view -->
-    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
-    <a-text
+    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow>
+        <a-text
         id ="current_node_label"
         position="0.2 1.1 1.49"
         width="1"
         color="white"
         value="NO NODE SELECTED"
         rotation="0 180 0"
-    ></a-text>
+        ></a-text>
+    </a-sphere>
+    <a-toast autoshow= 'false' message="" position="0 1.4 1" action="Got it"></a-toast>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
@@ -131,7 +130,7 @@
                 document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
                 document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
                 document.querySelector('#current_node_label').setAttribute('position', res.data[0] ? "0.2 1.3 1.49":"0.2 1.1 1.49");
-                toast.setAttribute('message',res.data[0] ? "Node found!": "No node found \n Please try another query");
+                toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                 toast.show();
             });
     });
