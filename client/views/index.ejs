@@ -74,11 +74,18 @@
     <!-- current node view -->
     <a-sphere visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
     <a-text
-        position="0 2 1.5"
+        position="0 2 1.4"
         width="1"
-        color="black"
+        color="white"
         value="NO NODE SELECTED"
     ></a-text>
+    <a-entity
+        position="0 2 1.5"
+        geometry="primitive: plane; height: 0.25; width: 1"
+        material="color: #333333"
+        text="color: white; anchor: left; font: sourcecodepro;"
+        rotation="-45 0 0"
+    ></a-entity>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
