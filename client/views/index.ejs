@@ -60,15 +60,16 @@
 
         <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
         <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'>
-            <a-entity
-                geometry="primitive: circle; radius:0.04 ; thetaLenght:90"
-                id="mode-1"
+            <a-circle
+                id="menu"
+                class="clickable"
                 color="black"
+                radius="0.04"
                 position="-0.04 0 0.03"
                 rotation="0 -90 0"
-                
+                theta-lenght="90"
             >
-            </a-entity>
+            </a-circle>
         </a-entity>
         
       </a-entity>
