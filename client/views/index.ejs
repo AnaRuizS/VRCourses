@@ -72,7 +72,7 @@
     <!-- END OF BASE PLATE  -->
 
     <!-- current node view -->
-    <a-sphere visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
     <a-text
         id ="current_node_label"
         position="0.2 1.1 1.49"
@@ -81,7 +81,6 @@
         value="NO NODE SELECTED"
         rotation="0 180 0"
     ></a-text>
-    <a-rounded color="#cccccc" position="0.2 1 1.5" width="0.5" height="0.2" radius="0.05" rotation="0 0 0"></a-rounded>
     <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
 
     <!-- node search view -->
@@ -119,7 +118,11 @@
                 body: JSON.stringify({input: input1.value})
             })
             .then(res=>res.json())
-            .then(res => console.log(res));
+            .then(res =>{
+                console.log(res.data[0]);
+                document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
+                document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
+            });
     });
 
 </script>
