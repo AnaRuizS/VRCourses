@@ -22,7 +22,7 @@
 
     <!-- node search view position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" -->
 
-    <a-keyboard id="app-key"></a-keyboard>
+    <a-keyboard></a-keyboard>
     <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
     <a-button id="go-button" position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     <a-cylinder id="center_booth" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
@@ -39,8 +39,9 @@
         var input1= document.querySelector('#input-1');
         var button = document.querySelector('#go-button');
         var str="";
-        var keyboard = document.querySelector("#app-key");
+        var keyboard = document.querySelector("a-keyboard");
         var toast = document.querySelector('a-toast');
+        keyboard.open();
 
         toast.addEventListener('actionclick', ()=>{
             toast.hide();
