@@ -19,7 +19,7 @@
         AFRAME.ASSETS_PATH = "public/assets";
     </script>
 
-    <script>
+    <script type="text/javascript">
         AFRAME.registerComponent('change-color-on-hover', {
         schema: {
             color: {default: 'red'}
@@ -27,7 +27,7 @@
     
         init: function () {
             var data = this.data;
-            var el = this.el;  // a-frame entity
+            var el = this.el;  // a-frame entit
             var defaultColor = el.getAttribute('material').color;
     
             el.addEventListener('mouseenter', function () {
