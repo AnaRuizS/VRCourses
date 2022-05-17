@@ -1,55 +1,10 @@
 <%- include('partials/header') %>
 <a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
+    <!-- CAMERA, CONTROLLERS AND ENVIRONMENT SETTINGS -->
+    <%- include('partials/basic_settings') %>
 
-    <!-- SETTINGS FOR LEFT AND RIGHT CONTROLLERS -->
-    <a-mixin id="controller-l"
-              
-              super-hands="
-                colliderEvent:raycaster-intersection;
-                colliderEventProperty:els;
-                colliderEndEvent:raycaster-intersection-cleared;
-                colliderEndEventProperty:clearedEls;
-              "
-              teleport-controls="cameraRig: #cameraRig;
-                teleportOrigin: #head;
-                button: trigger; 
-                curveShootingSpeed: 18; 
-                landingMaxAngle: 60" 
-                visible="true">
-    </a-mixin>
-      
-    <a-mixin id="controller-r"
-              raycaster="showLine: true"
-              super-hands="
-                colliderEvent:raycaster-intersection;
-                colliderEventProperty:els;
-                colliderEndEvent:raycaster-intersection-cleared;
-                colliderEndEventProperty:clearedEls;
-              "
-    >
-    </a-mixin>
-    <!-- END SETTINGS FOR CONTROLLERS-->
-
-    <!-- BASIC CAMERA AND MOTION SETTINGS -->
-    <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
-        <!-- camera -->
-        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true"></a-entity>
-        <!-- controllers-->
-        <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
-        <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'>
-            <%- include('partials/hand_menu') %>      
-        </a-entity>
-        
-      </a-entity>
-
-    <a-entity environment="preset: default"></a-entity>
-    <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity>
-
-    <!-- BASE PLATE FOR DISTANCE DESIGN 2m arm reach, 1m free space, 4m far-->
-    <a-cylinder color="cyan" height="0.05" radius="4" position="0 0 0"></a-cylinder>   
-    <a-cylinder color="gray" height="0.1" radius="2" position="0 0 0"></a-cylinder>
-    <a-cylinder color="crimson" height="0.15" radius="1" position="0 0 0"></a-cylinder>
-    <!-- END OF BASE PLATE  -->
+    <!-- BASE PLATE FOR CLOSER UI DESIGN -->
+    <%- include('partials/base_plate') %>
 
     <!-- current node view -->
     <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
