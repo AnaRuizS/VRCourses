@@ -69,7 +69,7 @@
                     document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
                     document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
                     document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
-                    res.data[0] ? keyboard.dismiss() : keyboard.open();
+                    res.data[0] ? keyboard.hide() : keyboard.show();
                     toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                     toast.show();
                 });
