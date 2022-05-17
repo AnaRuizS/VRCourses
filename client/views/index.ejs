@@ -33,45 +33,49 @@
 
 </a-scene>
 <script type="text/javascript">
-    var input1= document.querySelector('#input-1');
-    var button = document.querySelector('#go-button');
-    var str="";
-    var keyboard = document.querySelector("a-keyboard");
-    var toast = document.querySelector('a-toast');
 
-    toast.addEventListener('actionclick', ()=>{
-        toast.hide();
+    window.onload = function(event) {
+        var input1= document.querySelector('#input-1');
+        var button = document.querySelector('#go-button');
+        var str="";
+        var keyboard = document.querySelector("a-keyboard");
+        var toast = document.querySelector('a-toast');
 
-    });
+        toast.addEventListener('actionclick', ()=>{
+            toast.hide();
 
-    keyboard.addEventListener('input', (e)=>{
-        str += e.detail;
-        input1.setAttribute('value', str);
-    });
+        });
 
-    keyboard.addEventListener('backspace', (e)=>{
-        str = str.slice(0, -1);
-        input1.setAttribute('value', str);
-    });
+        keyboard.addEventListener('input', (e)=>{
+            str += e.detail;
+            input1.setAttribute('value', str);
+        });
 
-    button.addEventListener('click', ()=> {
-        fetch('/node_search', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({input: input1.value})
-            })
-            .then(res=>res.json())
-            .then(res =>{
-                //console.log(res.data[0]);
-                document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
-                document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
-                document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
-                document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
-                res.data[0] ? keyboard.dismiss() : keyboard.open();
-                toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
-                toast.show();
-            });
-    });
+        keyboard.addEventListener('backspace', (e)=>{
+            str = str.slice(0, -1);
+            input1.setAttribute('value', str);
+        });
+
+        button.addEventListener('click', ()=> {
+            fetch('/node_search', {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify({input: input1.value})
+                })
+                .then(res=>res.json())
+                .then(res =>{
+                    //console.log(res.data[0]);
+                    document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
+                    document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
+                    document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
+                    document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
+                    res.data[0] ? keyboard.dismiss() : keyboard.open();
+                    toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
+                    toast.show();
+                });
+        });
+    };
+    
 
 
 
