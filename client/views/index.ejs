@@ -7,23 +7,24 @@
     <%- include('partials/base_plate') %>
 
     <!-- current node view -->
-    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 1.5" shadow></a-sphere>
+    <a-sphere id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow></a-sphere>
     <a-text
         id ="current_node_label"
-        position="0.2 1.1 1.49"
+        position="0.2 1.3 -1.49"
         width="1"
         color="white"
         value="NO NODE SELECTED"
         rotation="0 180 0"
+        visible="false"
     ></a-text>
     <a-toast autoshow= 'false' message="" position="0 2 1" action="OK"></a-toast>
-    <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>
+    <!--<a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>-->
 
     <!-- node search view -->
     <a-keyboard is_open='true' position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" physical-keyboard='true' ></a-keyboard>
     <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
     <a-button id="go-button" position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
-    <a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
+    <a-cylinder id="center_booth" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
     <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
@@ -40,6 +41,7 @@
 
     toast.addEventListener('actionclick', ()=>{
         toast.hide();
+
     });
 
     keyboard.addEventListener('input', (e)=>{
@@ -63,7 +65,8 @@
                 //console.log(res.data[0]);
                 document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
                 document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
-                document.querySelector('#current_node_label').setAttribute('position', res.data[0] ? "0.2 1.3 1.49":"0.2 1.1 1.49");
+                document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
+                document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
                 toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                 toast.show();
             });
