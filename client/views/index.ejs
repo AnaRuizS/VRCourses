@@ -33,31 +33,8 @@
     <!-- BASIC CAMERA AND MOTION SETTINGS -->
     <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
         <!-- camera -->
-        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true">
-          <!-- INFO TOOLTIP- STICK TO CAMERA VIEW -->
-          <!--<a-text
-            id="forcegraph-tooltip"
-            position="-0.75 -1 -1.7"
-            width="1"
-            color="white"
-            value="Hover for node info"
-            rotation="-45 0 0"
-          ></a-text>
-          <a-entity
-            position="-0.5 -1.1 -1.8"
-            geometry="primitive: plane; height: 0.25; width: 1"
-            material="color: #333333"
-            text="color: white; anchor: left; font: sourcecodepro;"
-            rotation="-45 0 0"
-          ></a-entity>-->
-        </a-entity>
-              <!-- Left Controller  -->
-              <!-- a-entity class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
-              
-              <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #15ACCF" laser-controls raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: lawngreen; opacity: 0.5" visible="true"></a-entity-->
-        <!-- <a-entity super-hands hand-controls="hand: left" class="leftController" mixin="controller-l"></a-entity>
-        <a-entity super-hands hand-controls="hand: right" class='rightController' mixin="controller-r"></a-entity> -->
-
+        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true"></a-entity>
+        <!-- controllers-->
         <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
         <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'>
             <a-circle
@@ -68,7 +45,8 @@
                 position="-0.04 0 0.03"
                 rotation="0 -90 0"
             >
-                <a-rounded id="mode-1" position="-0.019 0.004 0.001" width='0.02' height="0.015" color="#171717" radius="0.005" rotation="0 -180 90"></a-rounded>
+                <a-rounded id="mode-1" position="-0.019 0.004 0.001" width='0.02' height="0.015" color="#171717" radius="0.005" rotation="0 -180 90"
+                    change-color-on-hover="color: blue"></a-rounded>
                 <a-rounded id="mode-2" position="-0.019 -0.024 0.001" width='0.02' height="0.015" color="#171717" radius="0.005" rotation="0 -180 90"></a-rounded>
                 <a-rounded id="mode-3" position="0.004 0.004 0.001" width='0.02' height="0.015" color="#171717" radius="0.005" rotation="0 -180 90"></a-rounded>
                 <a-rounded id="mode-4" position="0.004 -0.024 0.001" width='0.02' height="0.015" color="#171717" radius="0.005" rotation="0 -180 90"></a-rounded>
