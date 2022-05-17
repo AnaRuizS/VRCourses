@@ -21,23 +21,23 @@
 
     <script type="text/javascript">
         AFRAME.registerComponent('change-color-on-hover', {
-        schema: {
-            color: {default: 'red'}
-        },
-    
-        init: function () {
-            var data = this.data;
-            var el = this.el;  // a-frame entit
-            var defaultColor = el.getAttribute('material').color;
-    
-            el.addEventListener('mouseenter', function () {
-            el.setAttribute('color', data.color);
-            });
-    
-            el.addEventListener('mouseleave', function () {
-            el.setAttribute('color', defaultColor);
-            });
-        }
+            schema: {
+                color: {default: 'red'}
+            },
+        
+            init: function () {
+                var data = this.data;
+                var el = this.el;  // a-frame entity
+                var defaultColor = el.getAttribute('color');
+        
+                el.addEventListener('mouseenter', function () {
+                    el.setAttribute('color', data.color);
+                });
+        
+                el.addEventListener('mouseleave', function () {
+                    el.setAttribute('color', defaultColor);
+                });
+            }
         });
     </script>
   </head>
