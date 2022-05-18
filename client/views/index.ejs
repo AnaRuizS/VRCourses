@@ -23,8 +23,11 @@
     <!-- node search view -->
 
     <a-keyboard position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" visible='true'></a-keyboard>
-    <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6"></a-input>
-    <a-button id="go-button" position="0.1 1.7 -1.5" name="search" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+    <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6" visible="true">
+        <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+    </a-input>
+    
+
     <a-cylinder id="center_booth" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
@@ -71,6 +74,7 @@
                     document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
                     document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
                     keyboard.setAttribute('visible',res.data[0] ? "false":"true" );
+                    input1.setAttribute('visible',res.data[0] ? "false":"true" );
                     toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                     toast.show();
                 });
