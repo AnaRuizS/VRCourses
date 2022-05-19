@@ -15,13 +15,19 @@
 </a-mixin>
 
 <a-mixin id="controller-r"
-    raycaster="showLine: true"
+    raycaster="
+    showLine: true;
+    far:10 ;
+    interval: 0;
+    objects: .clickable, a-rounded
+    "
     super-hands="
     colliderEvent:raycaster-intersection;
     colliderEventProperty:els;
     colliderEndEvent:raycaster-intersection-cleared;
     colliderEndEventProperty:clearedEls;
     "
+    visible="true"
 >
 </a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
@@ -31,8 +37,8 @@
     <!-- camera -->
     <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true"></a-entity>
     <!-- controllers-->
-    <a-entity id="rightController" laser-controls raycaster="showLine: true; far:10 ; interval: 0; objects: .clickable, a-rounded" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc" visible='true'></a-entity>
-    <a-entity id="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible='true'>
+    <a-entity mixin="controller-r" laser-controls hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
+    <a-entity mixin="controller-l" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
         <%- include('hand_menu') %>      
     </a-entity>
 
