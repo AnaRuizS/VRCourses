@@ -25,7 +25,8 @@
     <!-- node search view -->
 
     <a-keyboard position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" visible='true'></a-keyboard>
-    <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6" visible="true">
+    <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6" visible="true"
+    onmousedown="this.focus()">
         <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     </a-input>
     
@@ -62,7 +63,7 @@
             input1.setAttribute('value', str);
         });
 
-        button.addEventListener('click', ()=> {
+        button.addEventListener('onmousedown', ()=> {
             fetch('/node_search', {
                     method: 'POST',
                     headers: {'Content-Type':'application/json'},
