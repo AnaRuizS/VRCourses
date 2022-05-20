@@ -40,13 +40,15 @@
             }
         });
 
-        AFRAME.registerComponent('place-on-booth', {
+        AFRAME.registerComponent('booth-hit', {
             init: function () {
+                var data = this.data;
                 var el = this.el;  // a-frame entity
-                var current_position = el.getAttribute('position');
+                //var current_position = el.getAttribute('position');
         
                 el.addEventListener('hit', function (e) {
-                    console.log(e);
+                    console.log(e.target.id);
+                    el.setAttribute('color', data.color);
                 });
         
             }

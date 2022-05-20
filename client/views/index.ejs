@@ -9,7 +9,7 @@
     <!-- current node view -->
     <a-sphere grabbable id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow 
     ondragenter="this.setAttribute('wireframe', true)"
-    ondragleave="this.setAttribute('wireframe', false)" place-on-booth>
+    ondragleave="this.setAttribute('wireframe', false)">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
@@ -31,7 +31,7 @@
     </a-input>
     
 
-    <a-cylinder id="center_booth" sphere-collider="objects: a-sphere" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow></a-cylinder>
+    <a-cylinder id="center_booth" sphere-collider="objects: a-sphere" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5" shadow booth-hit></a-cylinder>
 
     <!-- NODE INFO VIEW -->
     <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
