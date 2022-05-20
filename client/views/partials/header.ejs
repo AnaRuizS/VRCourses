@@ -41,14 +41,24 @@
         });
 
         AFRAME.registerComponent('booth-hit', {
+
+            schema: {
+                color: {default: 'gray'}
+            },
+
             init: function () {
                 var data = this.data;
                 var el = this.el;  // a-frame entity
-                //var current_position = el.getAttribute('position');
+                var defaultColor = el.getAttribute('color');
         
                 el.addEventListener('hit', function (e) {
                     console.log(e.target.id);
                     el.setAttribute('color', data.color);
+                });
+
+                el.addEventListener('hitend', function (e) {
+                    console.log(e.target.id);
+                    el.setAttribute('color', defaultColor);
                 });
         
             }
