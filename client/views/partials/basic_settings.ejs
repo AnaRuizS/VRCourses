@@ -37,8 +37,8 @@
     <!-- camera -->
     <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true"></a-entity>
     <!-- controllers-->
-    <a-entity mixin="controller-r" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
-    <a-entity mixin="controller-l" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
+    <a-entity mixin="controller-r" class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
+    <a-entity mixin="controller-l" class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
         <%- include('hand_menu') %>      
     </a-entity>
 
