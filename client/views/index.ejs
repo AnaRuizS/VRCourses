@@ -7,7 +7,7 @@
     <%- include('partials/base_plate') %>
 
     <!-- current node view -->
-    <a-sphere grabbable id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow 
+    <a-sphere ammo-body="type: dynamic" ammo-shape="type: box" grabbable id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow 
     onmousedown="this.setAttribute('wireframe', true)"
     onclick="this.setAttribute('wireframe', false)">
         <a-text
