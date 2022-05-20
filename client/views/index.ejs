@@ -14,7 +14,7 @@
     ></a-mixin>
 
     <!-- current node view -->
-    <a-sphere ammo-body="type: dynamic" ammo-shape="type: sphere" mixin="sphere-actions" id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow>
+    <a-sphere mixin="sphere-actions" id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow>
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
@@ -36,7 +36,7 @@
     </a-input>
     
 
-    <a-cylinder id="center_booth" ammo-body="type: static" ammo-shape="type: box" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5"
+    <a-cylinder id="center_booth" static-body color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5"
     shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
