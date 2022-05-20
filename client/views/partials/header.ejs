@@ -12,7 +12,7 @@
 
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-    <script src="client/lib/aframe-physics-system/dist/aframe-physics-system.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
     <script src="client/lib/aframe-forcegraph-component/dist/aframe-forcegraph-component.min.js"></script>
     <script src="client/lib/aframe-material/dist/aframe-material.min.js"></script>
     <script type="text/javascript">
@@ -47,7 +47,7 @@
             el.addEventListener('gripdown', function () {
                 el.setAttribute('collision-filter', {collisionForces: true})
             })
-            
+
             el.addEventListener('gripup', function () {
                 el.setAttribute('collision-filter', {collisionForces: false})
             })
