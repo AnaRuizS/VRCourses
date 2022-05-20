@@ -7,7 +7,7 @@
     <%- include('partials/base_plate') %>
 
     <!-- current node view -->
-    <a-sphere grabbable id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow 
+    <a-sphere ammo-body="type: dynamic" ammo-shape="type: sphere" grabbable id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow 
     ondragenter="this.setAttribute('wireframe', true)"
     ondragleave="this.setAttribute('wireframe', false)">
         <a-text
@@ -31,8 +31,8 @@
     </a-input>
     
 
-    <a-cylinder id="center_booth" sphere-collider="objects: a-sphere" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5"
-    shadow booth-hit="color: green"></a-cylinder>
+    <a-cylinder id="center_booth" ammo-body="type: dynamic" ammo-shape="type: box" color="gray" height="0.05" radius="0.5" position="0 0.95 -1.5"
+    shadow></a-cylinder>
 
     <!-- NODE INFO VIEW -->
     <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
