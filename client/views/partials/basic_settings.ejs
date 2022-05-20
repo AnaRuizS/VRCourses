@@ -1,17 +1,12 @@
 <!-- SETTINGS FOR LEFT AND RIGHT CONTROLLERS -->
 <a-mixin id="controller-l"
-    super-hands="
-    colliderEvent:raycaster-intersection;
-    colliderEventProperty:els;
-    colliderEndEvent:raycaster-intersection-cleared;
-    colliderEndEventProperty:clearedEls;
-    "
     teleport-controls="cameraRig: #cameraRig;
     teleportOrigin: #head;
     button: trigger; 
     curveShootingSpeed: 18; 
     landingMaxAngle: 60" 
-    visible="true">
+    visible="true"
+    super-hands >
 </a-mixin>
 
 <a-mixin id="controller-r"
@@ -23,6 +18,7 @@
     "
     cursor
     visible="true"
+    super-hands
 >
 </a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
