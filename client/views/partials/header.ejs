@@ -11,9 +11,10 @@
         src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
-    <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+    <!--<script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>-->
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="client/lib/aframe-material/dist/aframe-material.min.js"></script>
     <script type="text/javascript">
         AFRAME.ASSETS_PATH = "public/assets";
@@ -40,19 +41,6 @@
             }
         });
 
-        AFRAME.registerComponent('phase-shift', {
-            init: function () {
-            var el = this.el
-
-            el.addEventListener('gripdown', function () {
-                el.setAttribute('collision-filter', {collisionForces: true})
-            })
-
-            el.addEventListener('gripup', function () {
-                el.setAttribute('collision-filter', {collisionForces: false})
-            })
-            }
-        });
     </script>
   </head>
   <body>

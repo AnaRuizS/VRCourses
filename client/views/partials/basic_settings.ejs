@@ -6,14 +6,8 @@
     curveShootingSpeed: 18; 
     landingMaxAngle: 60" 
     visible="true"
-    physics-collider phase-shift
     sphere-collider= "objects: a-sphere"
-    collision-filter="collisionForces: false"
-    static-body="shape: sphere; sphereRadius: 0.02"
-    super-hands="colliderEvent: collisions;
-                 colliderEventProperty: els;
-                 colliderEndEvent: collisions;
-                 colliderEndEventProperty: clearedEls;">
+    super-hands>
 </a-mixin>
 
 <a-mixin id="controller-r"
@@ -25,21 +19,17 @@
     "
     cursor
     visible="true"
-    physics-collider phase-shift
     sphere-collider= "objects: a-sphere"
-    collision-filter="collisionForces: false"
-    static-body="shape: sphere; sphereRadius: 0.02"
-    super-hands="colliderEvent: collisions;
-                 colliderEventProperty: els;
-                 colliderEndEvent: collisions;
-                 colliderEndEventProperty: clearedEls;">
+    super-hands>
 </a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
 
 <!-- BASIC CAMERA AND MOTION SETTINGS -->
 <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
     <!-- camera -->
-    <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true"></a-entity>
+    <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true">
+        <a-toast autoshow= 'false' message="" position="0 2 1" action="OK"></a-toast>
+    </a-entity>
     <!-- controllers-->
     <a-entity mixin="controller-r" class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
     <a-entity mixin="controller-l" class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
