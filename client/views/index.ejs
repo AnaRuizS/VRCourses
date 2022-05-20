@@ -15,14 +15,14 @@
 
     <a-mixin id="booth-events"
                 static-body
-                change-color-on-collision = "color:green"
+                change-color-on-collision = "color:gray"
                 event-set__hoveron="_event: hover-start; color: green"
                 event-set__hoveroff="_event: hover-end; color: gray"
     ></a-mixin>
 
 
     <!-- current node view -->
-    <a-sphere mixin="sphere-actions" id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow>
+    <a-sphere dynamic-body mixin="sphere-actions" id= "current_node" visible= "false" color="yellow" radius="0.2" position="0 1 -1.5" shadow>
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
