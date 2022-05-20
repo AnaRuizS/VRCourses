@@ -39,6 +39,18 @@
                 });
             }
         });
+
+        AFRAME.registerComponent('place-on-booth', {
+            init: function () {
+                var el = this.el;  // a-frame entity
+                var current_position = el.getAttribute('position');
+        
+                el.addEventListener('hit', function (e) {
+                    console.log(e);
+                });
+        
+            }
+        });
     </script>
   </head>
   <body>
