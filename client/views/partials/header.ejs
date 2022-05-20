@@ -11,8 +11,8 @@
         src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
-    <script src="client/lib/aframe-physics-system/dist/aframe-physics-system.js"></script>
     <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+    <script src="client/lib/aframe-physics-system/dist/aframe-physics-system.js"></script>
     <script src="client/lib/aframe-forcegraph-component/dist/aframe-forcegraph-component.min.js"></script>
     <script src="client/lib/aframe-material/dist/aframe-material.min.js"></script>
     <script type="text/javascript">
@@ -57,7 +57,6 @@
                 });
 
                 el.addEventListener('hitend', function (e) {
-                    console.log(e.target.id);
                     el.setAttribute('color', defaultColor);
                 });
         

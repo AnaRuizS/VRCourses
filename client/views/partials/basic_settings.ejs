@@ -2,12 +2,17 @@
 <a-mixin id="controller-l"
     teleport-controls="cameraRig: #cameraRig;
     teleportOrigin: #head;
-    button: trigger; 
+    button: thumbstick; 
     curveShootingSpeed: 18; 
     landingMaxAngle: 60" 
     visible="true"
-    super-hands 
-    sphere-collider="objects: a-sphere">
+    physics-collider phase-shift
+    collision-filter="collisionForces: false"
+    static-body="shape: sphere; sphereRadius: 0.02"
+    super-hands="colliderEvent: collisions;
+                 colliderEventProperty: els;
+                 colliderEndEvent: collisions;
+                 colliderEndEventProperty: clearedEls;">
 </a-mixin>
 
 <a-mixin id="controller-r"
@@ -19,8 +24,13 @@
     "
     cursor
     visible="true"
-    sphere-collider="objects: a-sphere"
-    super-hands>
+    physics-collider phase-shift
+    collision-filter="collisionForces: false"
+    static-body="shape: sphere; sphereRadius: 0.02"
+    super-hands="colliderEvent: collisions;
+                 colliderEventProperty: els;
+                 colliderEndEvent: collisions;
+                 colliderEndEventProperty: clearedEls;">
 </a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
 
