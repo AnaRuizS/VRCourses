@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-<a-scene physics background="color: #FAFAFA">
+<a-scene physics="driver: ammo; debug: true; gravity: -9.8;" background="color: #FAFAFA">
     <!-- CAMERA, CONTROLLERS AND ENVIRONMENT SETTINGS -->
     <%- include('partials/basic_settings') %>
 
@@ -13,9 +13,8 @@
     ></a-mixin>
 
     <a-mixin id="booth-events"
-                static-body
-                event-set__hoveron="_event: hover-start; color: green"
-                event-set__hoveroff="_event: hover-end; color: gray"
+                ammo-body = "type: static"
+                ammo-shape= "type: box"
     ></a-mixin>
 
 
