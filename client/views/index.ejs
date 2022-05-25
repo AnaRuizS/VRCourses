@@ -7,7 +7,7 @@
     <%- include('partials/base_plate') %>
 
     <a-mixin id="sphere-actions"
-                emitCollisionEvents= "true"
+                
                 grabbable draggable
                 event-set__grabon="_event: grab-start; material.opacity: 0.7; transparent: true"
                 event-set__graboff="_event: grab-end; material.opacity: 1; transparent: false"
@@ -19,7 +19,7 @@
     ></a-mixin>
 
     <!-- current node view -->
-    <a-sphere ammo-body = "type: dynamic" ammo-shape=" type: box" mixin="sphere-actions" id= "current_node" visible= "true" color="yellow" radius="0.2" position="0 1 -1.5">
+    <a-sphere ammo-body = "type: dynamic; emitCollisionEvents: true" ammo-shape=" type: box" mixin="sphere-actions" id= "current_node" visible= "true" color="yellow" radius="0.2" position="0 1 -1.5">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"

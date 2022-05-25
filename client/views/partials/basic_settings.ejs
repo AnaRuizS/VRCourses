@@ -7,13 +7,12 @@
     landingMaxAngle: 60" 
     visible="true"
     physics-collider phase-shift
-    ammo-body="type: static"
+    ammo-body="type: static; emitCollisionEvents: true"
     ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
-    collision-filter="collisionForces: false"
     super-hands="colliderEvent: collidestart;
-                colliderEventProperty: els;
+                colliderEventProperty: targetEl;
                 colliderEndEvent: collideend;
-                colliderEndEventProperty: clearedEls;">
+                colliderEndEventProperty: targetEl;">
 </a-mixin>
 
 <a-mixin id="controller-r"
