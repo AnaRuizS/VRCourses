@@ -8,7 +8,8 @@
     visible="true"
     physics-collider phase-shift
     ammo-body="type: static"
-    ammo-shape="type: sphere"
+    ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
+    collision-filter="collisionForces: false"
     super-hands="colliderEvent: collisions;
                 colliderEventProperty: els;
                 colliderEndEvent: collisions;
