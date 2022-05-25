@@ -10,9 +10,9 @@
     ammo-body="type: static"
     ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
     collision-filter="collisionForces: false"
-    super-hands="colliderEvent: collisions;
+    super-hands="colliderEvent: collidestart;
                 colliderEventProperty: els;
-                colliderEndEvent: collisions;
+                colliderEndEvent: collideend;
                 colliderEndEventProperty: clearedEls;">
 </a-mixin>
 
