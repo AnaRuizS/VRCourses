@@ -38,23 +38,15 @@
             }
         });
 
-        AFRAME.registerComponent('change-color-on-collision', {
-            schema: {
-                color: {default: 'gray'}
-            },
-        
+        AFRAME.registerComponent('phase-shift', {
             init: function () {
-                var data = this.data;
-                var el = this.el;  // a-frame entity
-                var defaultColor = el.getAttribute('color');
-        
-                el.addEventListener('hit', function () {
-                    el.setAttribute('color', data.color);
-                });
-        
-                el.addEventListener('hitend', function () {
-                    el.setAttribute('color', defaultColor);
-                });
+            var el = this.el
+            el.addEventListener('triggerdown', function () {
+                el.setAttribute('ammo-body', {disableCollision: false})
+            })
+            el.addEventListener('triggerup', function () {
+                el.setAttribute('ammo-body', {disableCollision: true})
+            })
             }
         });
 

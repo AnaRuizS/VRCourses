@@ -6,8 +6,13 @@
     curveShootingSpeed: 18; 
     landingMaxAngle: 60" 
     visible="true"
-    sphere-collider= "objects: a-sphere"
-    super-hands>
+    physics-collider phase-shift
+    ammo-body="type: static"
+    ammo-shape="type: sphere"
+    super-hands="colliderEvent: collisions;
+                colliderEventProperty: els;
+                colliderEndEvent: collisions;
+                colliderEndEventProperty: clearedEls;">
 </a-mixin>
 
 <a-mixin id="controller-r"
