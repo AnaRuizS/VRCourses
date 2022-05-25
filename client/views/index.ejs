@@ -7,10 +7,9 @@
     <%- include('partials/base_plate') %>
 
     <a-mixin id="sphere-actions"
-                
                 grabbable draggable
-                event-set__grabon="_event: grab-start; material.opacity: 0.7; transparent: true"
-                event-set__graboff="_event: grab-end; material.opacity: 1; transparent: false"
+                event-set__dragon="_event: dragover-start; wireframe: true"
+                event-set__dragoff="_event: dragover-end; wireframe: false"
     ></a-mixin>
 
     <a-mixin id="booth-events"
