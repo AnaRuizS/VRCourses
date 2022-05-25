@@ -24,8 +24,13 @@
     "
     cursor
     visible="true"
-    sphere-collider= "objects: a-sphere"
-    super-hands>
+    physics-collider phase-shift
+    ammo-body="type: static; emitCollisionEvents: true"
+    ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
+    super-hands="colliderEvent: collidestart;
+                colliderEventProperty: targetEl;
+                colliderEndEvent: collideend;
+                colliderEndEventProperty: targetEl;">
 </a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
 
