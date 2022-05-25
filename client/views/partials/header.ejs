@@ -41,10 +41,10 @@
         AFRAME.registerComponent('phase-shift', {
             init: function () {
             var el = this.el
-            el.addEventListener('triggerdown', function () {
+            el.addEventListener('gripdown', function () {
                 el.setAttribute('ammo-body', {disableCollision: false})
             })
-            el.addEventListener('triggerup', function () {
+            el.addEventListener('gripup', function () {
                 el.setAttribute('ammo-body', {disableCollision: true})
             })
             }
