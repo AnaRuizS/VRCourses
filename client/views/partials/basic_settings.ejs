@@ -7,7 +7,7 @@
     landingMaxAngle: 60" 
     visible="true"
     physics-collider phase-shift
-    ammo-body="type: static; emitCollisionEvents: true"
+    ammo-body="type: kinematic; emitCollisionEvents: true; disableCollision: true"
     ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
     super-hands="colliderEvent: collidestart;
                 colliderEventProperty: targetEl;
@@ -25,7 +25,7 @@
     cursor
     visible="true"
     physics-collider phase-shift
-    ammo-body="type: static; emitCollisionEvents: true"
+    ammo-body="type: kinematic; emitCollisionEvents: true; disableCollision: true"
     ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
     super-hands="colliderEvent: collidestart;
                 colliderEventProperty: targetEl;
