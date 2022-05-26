@@ -6,7 +6,7 @@
     curveShootingSpeed: 18; 
     landingMaxAngle: 60" 
     visible="true"
-    physics-collider phase-shift
+    physics-collider
     ammo-body="type: kinematic; emitCollisionEvents: true; disableCollision: true"
     ammo-shape="fit: manual; type: sphere; sphereRadius: 0.02"
     super-hands="colliderEvent: collidestart;
@@ -35,17 +35,17 @@
 <!-- END SETTINGS FOR CONTROLLERS-->
 
 <!-- BASIC CAMERA AND MOTION SETTINGS -->
-<a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
+<a-entity id="cameraRig" movement-controls="constrainToNavMesh: false;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
     <!-- camera -->
-    <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true">
-        <a-toast autoshow= 'false' message="" position="0 2 1" action="OK"></a-toast>
+    <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: false">
+        
     </a-entity>
     <!-- controllers-->
     <a-entity mixin="controller-r" class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
     <a-entity mixin="controller-l" class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
         <%- include('hand_menu') %>      
     </a-entity>
-
+    <a-toast autoshow= 'false' message="" position="0 2 -1" action="OK"></a-toast>
 </a-entity>
 <!--END CAMERA AND MOTION SETTINGS -->
 
