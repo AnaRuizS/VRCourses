@@ -13,7 +13,7 @@
     <!--script src="client/lib/aframe-environment-component/dist/aframe-environment-component.min.js"></script>-->
     <script src="client/lib/aframe-extras/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/galadirith/aframe-teleport-controls@ec9d19c/dist/aframe-teleport-controls.js"></script>
-    
+
     <!--<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>-->
     <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.js"></script>
@@ -56,6 +56,46 @@
             el.addEventListener('gripup', function () {
                 el.setAttribute('ammo-body', {disableCollision: true})
             })
+            }
+        });
+
+        AFRAME.registerComponent('transform-if-collided', {
+            init: function () {
+                this.el.addEventListener('collidestart', function (evt) {
+                    var target=evt.detail.targetEl;
+                    var data= target.getAttribute('object-data');
+
+                    if (data!=="{}"){
+                        var screen1 = document.createElement('a-rounded');
+                        screen1.setAttribute('width', "1");
+                        screen1.setAttribute('height', "1");
+                        screen1.setAttribute('radius', "0.05");
+                        screen1.setAttribute('rotation', "0 110 0");
+                        screen1.setAttribute('color', "#cccccc");
+                        screen1.setAttribute('position', "0.75 0.25 -1");
+
+                        var screen2 = document.createElement('a-rounded');
+                        screen2.setAttribute('width', "1");
+                        screen2.setAttribute('height', "1");
+                        screen2.setAttribute('radius', "0.05");
+                        screen2.setAttribute('rotation', "0 0 0");
+                        screen2.setAttribute('color', "#cccccc");
+                        screen2.setAttribute('position', "-0.5 0.25 -2");
+
+                        var screen3 = document.createElement('a-rounded');
+                        screen3.setAttribute('width', "1");
+                        screen3.setAttribute('height', "1");
+                        screen3.setAttribute('radius', "0.05");
+                        screen3.setAttribute('rotation', "0 45 0");
+                        screen3.setAttribute('color', "#cccccc");
+                        screen3.setAttribute('position', "-0.75 0.25 -1");
+
+                        target.appendChild(screen1);
+                        target.appendChild(screen2);
+                        target.appendChild(screen3);
+                    }
+
+                })
             }
         });
 

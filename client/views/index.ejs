@@ -6,13 +6,6 @@
     <!-- BASE PLATE FOR CLOSER UI DESIGN -->
     <%- include('partials/base_plate') %>
 
-    <!--<a-mixin id="sphere-actions"
-                hoverable draggable
-                grabbable = "constraintComponentName: ammo-constraint;"
-                event-set__hoveron="_event: hover-start; opacity: 0.7; transparent: true"
-                event-set__hoveroff="_event: hover-end; opacity: 1; transparent: false"
-    ></a-mixin>-->
-
     <a-mixin id="sphere-actions"
                 hoverable draggable
                 grabbable = "constraintComponentName: ammo-constraint;"
@@ -21,21 +14,38 @@
     ></a-mixin>
 
     <a-mixin id="booth-events"
-                ammo-body = "type: dynamic"
-                ammo-shape= "type: box"
+                transform-if-collided
+                geometry="primitive: cylinder; radius: 0.5; height: 0.05"
+                ammo-body="type: static; emitCollisionEvents: true" 
+                ammo-shape="type: box"
     ></a-mixin>
 
     <!-- current node view -->
-    <a-sphere ammo-body = "type: dynamic" ammo-shape=" type: box" mixin="sphere-actions" id= "current_node" visible= "true" color="yellow" radius="0.2" position="0 1 -1.5">
+    <a-sphere object-data="{}"
+            ammo-body = "type: dynamic" 
+            ammo-shape=" type: box" 
+            mixin="sphere-actions" 
+            id= "current_node" 
+            visible= "true" 
+            color="yellow" 
+            radius="0.2" 
+            position="0 1 -1.5">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
             width="1"
             color="white"
             value="NO NODE SELECTED"
-        ></a-text>
+            side="double"
+            align="center"
+        ></a-text>        
     </a-sphere>
     
+
+    <!-- NODE INFO VIEW <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 -2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
+        <a-rounded color="#cccccc" opacity='0.9' position="0.75 1 -2" width="1" height="1" radius="0.05" rotation="0 45 0"></a-rounded>
+        <a-rounded color="#cccccc" opacity='0.9' position="-0.5 1 2" width="1" height="1" radius="0.05" rotation="0 0 0"></a-rounded>-->
+
     <!--<a-toast autoshow= 'false' message="" position="0 2 1" action="OK"></a-toast>-->
     <!--<a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>-->
 
@@ -48,12 +58,7 @@
     </a-input>
     
 
-    <a-cylinder id="center_booth" ammo-body="type: static" ammo-shape="type: box" color="red" height="0.05" radius="0.5" position="0 0.75 -1.5"></a-cylinder>
-
-    <!-- NODE INFO VIEW -->
-    <a-rounded color="#cccccc" opacity='0.9' position="-0.75 1 2" width="1" height="1" radius="0.05" rotation="0 110 0"></a-rounded>
-    <a-rounded color="#cccccc" opacity='0.9' position="0.75 1 2" width="1" height="1" radius="0.05" rotation="0 45 0"></a-rounded>
-    <a-rounded color="#cccccc" opacity='0.9' position="-0.5 1 2" width="1" height="1" radius="0.05" rotation="0 0 0"></a-rounded>
+    <a-cylinder id="center_booth" color="gray" height="0.05" radius="0.5" position="0 0.75 -1.5" mixin="booth-events"></a-cylinder>
 
 </a-scene>
 <script type="text/javascript">
@@ -92,8 +97,8 @@
                     document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
                     document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
                     document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
-                    //document.querySelector('#center_booth').setAttribute('position', res.data[0] ? "0 0.75 -1.5":"0 0.95 -1.5");
-                    //keyboard.setAttribute('visible',res.data[0] ? "false":"true" );
+                    //teleport node back to the center_booth
+                    document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
                     keyboard.setAttribute('scale',res.data[0] ? "0 0 0":"1.5 1.5 1.5" );
                     input1.setAttribute('visible',res.data[0] ? "false":"true" );
                     toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
