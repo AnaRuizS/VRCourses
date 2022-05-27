@@ -65,7 +65,7 @@
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
                     
-                    if (target_id== "current_node"){
+                    if (target_id=== "current_node"){
                         var data= target.getAttribute('object-data');
 
                         if (data!=="{}"){
@@ -93,9 +93,9 @@
                             screenr.setAttribute('color', "#cccccc");
                             screenr.setAttribute('position', "0.75 0.25 -2");
 
-                            target.appendChild(screenl);
-                            target.appendChild(screenc);
-                            target.appendChild(screenr);
+                            this.el.appendChild(screenl);
+                            this.el.appendChild(screenc);
+                            this.el.appendChild(screenr);
                         }
 
                     }
@@ -106,11 +106,12 @@
                 this.el.addEventListener('collideend', function (evt) {
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
-                    
-                    if (target_id== "current_node"){
-                        target.removeChild(screenl);
-                        target.removeChild(screenc);
-                        target.removeChild(screenr);
+                    console.log("collision with booth ended");
+
+                    if (target_id=== "current_node"){
+                        this.el.removeChild(screenl);
+                        this.el.removeChild(screenc);
+                        this.el.removeChild(screenr);
                     }
 
                 });
