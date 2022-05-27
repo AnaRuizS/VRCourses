@@ -66,33 +66,33 @@
                     var data= target.getAttribute('object-data');
 
                     if (data!=="{}"){
-                        var screen1 = document.createElement('a-rounded');
-                        screen1.setAttribute('width', "1");
-                        screen1.setAttribute('height', "1");
-                        screen1.setAttribute('radius', "0.05");
-                        screen1.setAttribute('rotation', "0 110 0");
-                        screen1.setAttribute('color', "#cccccc");
-                        screen1.setAttribute('position', "0.75 0.25 -1");
+                        var screenl = document.createElement('a-rounded');
+                        screenl.setAttribute('width', "1");
+                        screenl.setAttribute('height', "1");
+                        screenl.setAttribute('radius', "0.05");
+                        screenl.setAttribute('rotation', "0 45 0");
+                        screenl.setAttribute('color', "#cccccc");
+                        screenl.setAttribute('position', "-1.5 0.25 -1.5");
 
-                        var screen2 = document.createElement('a-rounded');
-                        screen2.setAttribute('width', "1");
-                        screen2.setAttribute('height', "1");
-                        screen2.setAttribute('radius', "0.05");
-                        screen2.setAttribute('rotation', "0 0 0");
-                        screen2.setAttribute('color', "#cccccc");
-                        screen2.setAttribute('position', "-0.5 0.25 -2");
+                        var screenc = document.createElement('a-rounded');
+                        screenc.setAttribute('width', "1");
+                        screenc.setAttribute('height', "1");
+                        screenc.setAttribute('radius', "0.05");
+                        screenc.setAttribute('rotation', "0 0 0");
+                        screenc.setAttribute('color', "#cccccc");
+                        screenc.setAttribute('position', "-0.5 0.25 -2");
 
-                        var screen3 = document.createElement('a-rounded');
-                        screen3.setAttribute('width', "1");
-                        screen3.setAttribute('height', "1");
-                        screen3.setAttribute('radius', "0.05");
-                        screen3.setAttribute('rotation', "0 45 0");
-                        screen3.setAttribute('color', "#cccccc");
-                        screen3.setAttribute('position', "-0.75 0.25 -1");
+                        var screenr = document.createElement('a-rounded');
+                        screenr.setAttribute('width', "1");
+                        screenr.setAttribute('height', "1");
+                        screenr.setAttribute('radius', "0.05");
+                        screenr.setAttribute('rotation', "0 315 0");
+                        screenr.setAttribute('color', "#cccccc");
+                        screenr.setAttribute('position', "0.75 0.25 -2");
 
-                        target.appendChild(screen1);
-                        target.appendChild(screen2);
-                        target.appendChild(screen3);
+                        target.appendChild(screenl);
+                        target.appendChild(screenc);
+                        target.appendChild(screenr);
                     }
 
                 })
