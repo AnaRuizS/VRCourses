@@ -63,39 +63,57 @@
             init: function () {
                 this.el.addEventListener('collidestart', function (evt) {
                     var target=evt.detail.targetEl;
-                    var data= target.getAttribute('object-data');
+                    var target_id= target.getAttribute('id');
+                    
+                    if (target_id== "current_node"){
+                        var data= target.getAttribute('object-data');
 
-                    if (data!=="{}"){
-                        var screenl = document.createElement('a-rounded');
-                        screenl.setAttribute('width', "1");
-                        screenl.setAttribute('height', "1");
-                        screenl.setAttribute('radius', "0.05");
-                        screenl.setAttribute('rotation', "0 45 0");
-                        screenl.setAttribute('color', "#cccccc");
-                        screenl.setAttribute('position', "-1.5 0.25 -1.5");
+                        if (data!=="{}"){
+                            var screenl = document.createElement('a-rounded');
+                            screenl.setAttribute('width', "1");
+                            screenl.setAttribute('height', "1");
+                            screenl.setAttribute('radius', "0.05");
+                            screenl.setAttribute('rotation', "0 45 0");
+                            screenl.setAttribute('color', "#cccccc");
+                            screenl.setAttribute('position', "-1.5 0.25 -1.5");
 
-                        var screenc = document.createElement('a-rounded');
-                        screenc.setAttribute('width', "1");
-                        screenc.setAttribute('height', "1");
-                        screenc.setAttribute('radius', "0.05");
-                        screenc.setAttribute('rotation', "0 0 0");
-                        screenc.setAttribute('color', "#cccccc");
-                        screenc.setAttribute('position', "-0.5 0.25 -2");
+                            var screenc = document.createElement('a-rounded');
+                            screenc.setAttribute('width', "1");
+                            screenc.setAttribute('height', "1");
+                            screenc.setAttribute('radius', "0.05");
+                            screenc.setAttribute('rotation', "0 0 0");
+                            screenc.setAttribute('color', "#cccccc");
+                            screenc.setAttribute('position', "-0.5 0.25 -2");
 
-                        var screenr = document.createElement('a-rounded');
-                        screenr.setAttribute('width', "1");
-                        screenr.setAttribute('height', "1");
-                        screenr.setAttribute('radius', "0.05");
-                        screenr.setAttribute('rotation', "0 315 0");
-                        screenr.setAttribute('color', "#cccccc");
-                        screenr.setAttribute('position', "0.75 0.25 -2");
+                            var screenr = document.createElement('a-rounded');
+                            screenr.setAttribute('width', "1");
+                            screenr.setAttribute('height', "1");
+                            screenr.setAttribute('radius', "0.05");
+                            screenr.setAttribute('rotation', "0 315 0");
+                            screenr.setAttribute('color', "#cccccc");
+                            screenr.setAttribute('position', "0.75 0.25 -2");
 
-                        target.appendChild(screenl);
-                        target.appendChild(screenc);
-                        target.appendChild(screenr);
+                            target.appendChild(screenl);
+                            target.appendChild(screenc);
+                            target.appendChild(screenr);
+                        }
+
+                    }
+                    
+
+                });
+
+                this.el.addEventListener('collideend', function (evt) {
+                    var target=evt.detail.targetEl;
+                    var target_id= target.getAttribute('id');
+                    
+                    if (target_id== "current_node"){
+                        target.removeChild(screenl);
+                        target.removeChild(screenc);
+                        target.removeChild(screenr);
                     }
 
-                })
+                });
             }
         });
 
