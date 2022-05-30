@@ -15,7 +15,8 @@
 
     <a-mixin id="booth-events"
                 transform-if-collided
-                geometry="primitive: cylinder; radius: 0.5; height: 0.05"
+                geometry="primitive: box; depth: 0.75; height: 0.05; width: 1.25"
+                material="color: gray"
                 ammo-body="type: static; emitCollisionEvents: true" 
                 ammo-shape="type: box"
     ></a-mixin>
@@ -29,7 +30,7 @@
             visible= "false" 
             color="yellow" 
             radius="0.1" 
-            position="0 1 -1.5">
+            position="0 1 -0.75">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
@@ -45,13 +46,13 @@
     <!--<a-cylinder color="gray" height="0.05" radius="0.5" position="0 0.75 1.5" shadow></a-cylinder>-->
 
     <!-- node search view -->
-    <a-keyboard position="-1.1 1 -1.4" rotation="-35 0 0" scale="1.5 1.5 1.5" visible='true'></a-keyboard>
-    <a-input id='input-1' position="-0.5 1.7 -1.5" placeholder="Search for node" color="black" width="0.6" visible="true"
+    <a-keyboard position="-0.75 0.85 -1" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
+    <a-input id='input-1' position="-0.4 1.35 -1.1" placeholder="Search for node" color="black" width="0.6" visible="true"
     onclick="this.focus()">
         <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
     </a-input>
     
-    <a-cylinder id="center_booth" color="gray" height="0.05" radius="0.5" position="0 0.75 -1.5" mixin="booth-events"></a-cylinder>
+    <a-entity id="center_booth" position="0 0.75 -0.9" mixin="booth-events"></a-entity>
     
 </a-scene>
 <script type="text/javascript">
@@ -89,7 +90,7 @@
                     //console.log(res.data[0]);
                     document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
                     document.querySelector('#current_node').setAttribute('position', res.data[0] ? "0 1 -1.5":"0 1 -1.5");
-                    document.querySelector('#current_node').components["dynamic-body"].syncToPhysics();
+                    //document.querySelector('#current_node').components["dynamic-body"].syncToPhysics();
 
                     document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
                     document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
