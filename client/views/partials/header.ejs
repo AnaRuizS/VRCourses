@@ -124,7 +124,8 @@
                                     var target2=evt.detail.targetEl;
 
                                     if (target2.getAttribute('id') === target_id){
-                                        target2.parentNode.removeChild(target2);
+                                        n=document.querySelector("#current_node");
+                                        n.parentNode.removeChild(n);
                                     }
                                 });
                                 add_booth.setAttribute('position', "-0.5 0.78 -0.9");
