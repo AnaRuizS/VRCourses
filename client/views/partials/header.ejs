@@ -76,6 +76,7 @@
                             screenl.setAttribute('rotation', "0 45 0");
                             screenl.setAttribute('color', "#cccccc");
                             screenl.setAttribute('position', "-1.5 0.25 -1.5");
+                            screenl.setAttribute('class', "info-screen");
 
                             var screenc = document.createElement('a-rounded');
                             screenc.setAttribute('width', "1");
@@ -84,6 +85,7 @@
                             screenc.setAttribute('rotation', "0 0 0");
                             screenc.setAttribute('color', "#cccccc");
                             screenc.setAttribute('position', "-0.5 0.25 -2");
+                            screenc.setAttribute('class', "info-screen");
 
                             var screenr = document.createElement('a-rounded');
                             screenr.setAttribute('width', "1");
@@ -92,6 +94,7 @@
                             screenr.setAttribute('rotation', "0 315 0");
                             screenr.setAttribute('color', "#cccccc");
                             screenr.setAttribute('position', "0.75 0.25 -2");
+                            screenr.setAttribute('class', "info-screen");
 
                             this.el.appendChild(screenl);
                             this.el.appendChild(screenc);
@@ -106,12 +109,10 @@
                 this.el.addEventListener('collideend', function (evt) {
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
-                    console.log("collision with booth ended");
+                    //console.log("collision with booth ended");
 
                     if (target_id=== "current_node"){
-                        this.el.removeChild(screenl);
-                        this.el.removeChild(screenc);
-                        this.el.removeChild(screenr);
+                        document.querySelectorAll(".info-screen").forEach(e => e.parentNode.removeChild(e));
                     }
 
                 });
