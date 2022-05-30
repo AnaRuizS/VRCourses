@@ -67,6 +67,7 @@
                     
                     if (target_id=== "current_node"){
                         var data= target.getAttribute('object-data');
+                        var sceneEl = document.querySelector('a-scene');
 
                         if (data!=="{}"){
                             var screenl = document.createElement('a-rounded');
@@ -96,9 +97,9 @@
                             screenr.setAttribute('position', "0.75 0.25 -2");
                             screenr.setAttribute('class', "info-screen");
 
-                            this.el.appendChild(screenl);
-                            this.el.appendChild(screenc);
-                            this.el.appendChild(screenr);
+                            sceneEl.appendChild(screenl);
+                            sceneEl.appendChild(screenc);
+                            sceneEl.appendChild(screenr);
                         }
 
                     }
