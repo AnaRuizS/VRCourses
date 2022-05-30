@@ -123,8 +123,8 @@
                                 add_booth.addEventListener('collidestart', function(evt){
                                     var target2=evt.detail.targetEl;
 
-                                    if (target2.getAttribute('id') === target_id){
-                                        n=document.querySelector("#current_node");
+                                    if (target2.getAttribute('id') === "current_node"){
+                                        var n=document.querySelector("#current_node");
                                         n.parentNode.removeChild(n);
                                     }
                                 });
