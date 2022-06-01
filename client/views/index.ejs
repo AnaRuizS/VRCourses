@@ -50,8 +50,8 @@
     </a-sphere>
     
     <!-- node search view -->
-    <a-keyboard position="-0.75 0.85 -0.75" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
-    <a-input id='input-1' position="-0.45 1.35 -1" placeholder="Search for node" color="black" width="0.6" visible="true"
+    <a-keyboard class="search-view" position="-0.75 0.85 -0.75" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
+    <a-input id='input-1' class="search-view" position="-0.45 1.35 -1" placeholder="Search for node" color="black" width="0.6" visible="true"
     onclick="this.focus()">
         <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked></a-button>
     </a-input>
@@ -112,29 +112,6 @@
             input1.setAttribute('value', str);
         });
 
-        /*button.addEventListener('click', ()=> {
-            fetch('/node_search', {
-                    method: 'POST',
-                    headers: {'Content-Type':'application/json'},
-                    body: JSON.stringify({input: input1.value})
-                })
-                .then(res=>res.json())
-                .then(res =>{
-                    //console.log(res.data[0]);
-                    document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
-                    document.querySelector('#current_node').setAttribute('position', res.data[0] ? "0 1 -1.5":"0 1 -1.5");
-                    //document.querySelector('#current_node').components["dynamic-body"].syncToPhysics();
-
-                    document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
-                    document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
-                    //teleport node back to the center_booth
-                    document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
-                    keyboard.setAttribute('scale',res.data[0] ? "0 0 0":"1.5 1.5 1.5" );
-                    input1.setAttribute('visible',res.data[0] ? "false":"true" );
-                    toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
-                    toast.show();
-                });
-        });*/
     };
     
 

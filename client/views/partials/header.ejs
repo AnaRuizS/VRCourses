@@ -77,8 +77,18 @@
                         })
                         .then(res=>res.json())
                         .then(res =>{
+                            
+                            // show toast with info
+                            var toast = document.querySelector("a-toast");
+                            toast.setAttribute(('message',res.data[0] ? "Node found!": "Please try another query"));
+                            toast.show();
 
-                            // show toast with data info
+                            // if search sucess then
+                            console.log(res.data);
+
+                            //document.querySelectorAll(".info-screen").forEach(e => e.parentNode.removeChild(e));
+
+                            
                              
                             // if search sucess then: 
 
@@ -88,8 +98,6 @@
                                 // show action booths
                             
                             // if not keep current node view hidden 
-
-                            console.log(res.data[0] ? "data found": "no data");
 
                             /*document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
                             document.querySelector('#current_node').setAttribute('position', res.data[0] ? "0 1 -1.5":"0 1 -1.5");
