@@ -44,14 +44,15 @@
 
     <!-- current node view -->
     <a-sphere object-data="{}"
+            class="node-view"
             ammo-body = "type: dynamic" 
             ammo-shape=" type: box" 
             mixin="sphere-actions" 
             id= "current_node" 
-            visible= "false" 
             color="yellow" 
             radius="0.1" 
-            position="0 1 -0.88">
+            position="0 1 -0.88"
+            scale="0 0 0">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
@@ -72,9 +73,9 @@
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
 
-    <a-entity id="center_booth" position="0 0.78 -0.9" mixin="info-booth"></a-entity>
-    <a-entity id="left_booth" position="-0.5 0.78 -0.9" mixin="add-booth"></a-entity>
-    <a-entity id="right_booth" position="0.5 0.78 -0.9" mixin="cancel-booth"></a-entity>
+    <a-entity id="center_booth" class="node-view" position="0 0.78 -0.9" mixin="info-booth" scale="0 0 0"></a-entity>
+    <a-entity id="left_booth" class="node-view" position="-0.5 0.78 -0.9" mixin="add-booth" scale="0 0 0"></a-entity>
+    <a-entity id="right_booth" class="node-view" position="0.5 0.78 -0.9" mixin="cancel-booth" scale="0 0 0"></a-entity>
 
 
     <!--var add_booth=document.createElement('a-entity');

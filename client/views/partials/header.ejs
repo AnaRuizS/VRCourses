@@ -88,7 +88,9 @@
                                 // hide keyboard and input
                                 document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"0 0 0"));
 
-                                
+                                // show sphere in original position (sync w ammo physics and fill w data first item in list)
+                                document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+
                             }
 
                             
