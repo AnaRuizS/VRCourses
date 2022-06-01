@@ -20,10 +20,24 @@
                 ammo-shape="type: box"
     ></a-mixin>
 
-    <a-mixin id="info-booth-actions"
+    <a-mixin id="info-booth"
                 transform-if-collided
                 geometry="primitive: cylinder; height: 0.03; radius: 0.2"
                 material="color: #24a0ed"
+                ammo-body="type: static; emitCollisionEvents: true" 
+                ammo-shape="type: box"
+    ></a-mixin>
+
+    <a-mixin id="add-booth"
+                geometry="primitive: cylinder; height: 0.03; radius: 0.15"
+                material="color: green"
+                ammo-body="type: static; emitCollisionEvents: true" 
+                ammo-shape="type: box"
+    ></a-mixin>
+
+    <a-mixin id="cancel-booth"
+                geometry="primitive: cylinder; height: 0.03; radius: 0.15"
+                material="color: red"
                 ammo-body="type: static; emitCollisionEvents: true" 
                 ammo-shape="type: box"
     ></a-mixin>
@@ -37,7 +51,7 @@
             visible= "false" 
             color="yellow" 
             radius="0.1" 
-            position="0 0.895 -0.88">
+            position="0 1 -0.88">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
@@ -53,12 +67,15 @@
     <a-keyboard class="search-view" position="-0.75 0.85 -0.75" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
     <a-input id='input-1' class="search-view" position="-0.45 1.35 -1" placeholder="Search for node" color="black" width="0.6" visible="true"
     onclick="this.focus()">
-        <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked></a-button>
+        <a-button id="go-button" class="search-view" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked></a-button>
     </a-input>
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
 
-    <a-entity id="center_booth" position="0 0.78 -0.9" mixin="info-booth-actions"></a-entity>
+    <a-entity id="center_booth" position="0 0.78 -0.9" mixin="info-booth"></a-entity>
+    <a-entity id="left_booth" position="-0.5 0.78 -0.9" mixin="add-booth"></a-entity>
+    <a-entity id="right_booth" position="0 0.78 -0.9" mixin="cancel-booth"></a-entity>
+
 
     <!--var add_booth=document.createElement('a-entity');
                                 add_booth.setAttribute('geometry',"primitive: cylinder; height: 0.03; radius: 0.2");
