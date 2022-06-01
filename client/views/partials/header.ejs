@@ -91,6 +91,11 @@
                                 // show sphere in original position (sync w ammo physics and fill w data first item in list)
                                 document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
 
+                                document.querySelector("#current_node").setAttribute('visible',"true");
+
+                            }else{
+                                
+                                document.querySelector("#current_node").setAttribute('visible',"false");
                             }
 
                             

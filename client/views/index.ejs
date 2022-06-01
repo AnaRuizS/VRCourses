@@ -44,7 +44,6 @@
 
     <!-- current node view -->
     <a-sphere object-data="{}"
-            class="node-view"
             ammo-body = "type: dynamic" 
             ammo-shape=" type: box" 
             mixin="sphere-actions" 
@@ -52,7 +51,7 @@
             color="yellow" 
             radius="0.1" 
             position="0 1 -0.88"
-            scale="0 0 0">
+            visible="false">
         <a-text
             id ="current_node_label"
             position="0 0.3 0"
