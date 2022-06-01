@@ -79,7 +79,7 @@
                         .then(res =>{
                             
                             // show toast with info
-                            var toast = document.querySelector("a-toast");
+                            var toast = document.querySelector("#search-toast");
                             toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                             toast.show();
 

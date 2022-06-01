@@ -57,11 +57,11 @@
     </a-input>
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
-    <a-toast message=""
+    <a-toast id="search-toast" message=""
         action="OK"
         autoshow="false"
-    >
-    </a-toast>
+        position="0 1 -1"
+    ></a-toast>
 
     <a-entity id="center_booth" position="0 0.78 -0.9" mixin="info-booth-actions"></a-entity>
 
@@ -94,12 +94,12 @@
         var input1= document.querySelector('#input-1');
         var str="";
         var keyboard = document.querySelector("a-keyboard");
-        var toast = document.querySelector('a-toast');
+        /*var toast = document.querySelector('a-toast');
 
         toast.addEventListener('actionclick', ()=>{
             toast.hide();
 
-        });
+        });*/
 
         keyboard.addEventListener('input', (e)=>{
             str += e.detail;
