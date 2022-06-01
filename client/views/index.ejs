@@ -53,12 +53,16 @@
     <a-keyboard position="-0.75 0.85 -0.75" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
     <a-input id='input-1' position="-0.45 1.35 -1" placeholder="Search for node" color="black" width="0.6" visible="true"
     onclick="this.focus()">
-        <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5"></a-button>
+        <a-button id="go-button" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked="input:''"></a-button>
     </a-input>
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
+    <a-toast message=""
+        action="OK"
+        autoshow="false"
+    >
+    </a-toast>
 
-    
     <a-entity id="center_booth" position="0 0.78 -0.9" mixin="info-booth-actions"></a-entity>
 
     <!--var add_booth=document.createElement('a-entity');
@@ -108,7 +112,7 @@
             input1.setAttribute('value', str);
         });
 
-        button.addEventListener('click', ()=> {
+        /*button.addEventListener('click', ()=> {
             fetch('/node_search', {
                     method: 'POST',
                     headers: {'Content-Type':'application/json'},
@@ -130,7 +134,7 @@
                     toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
                     toast.show();
                 });
-        });
+        });*/
     };
     
 
