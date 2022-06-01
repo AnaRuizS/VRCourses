@@ -88,41 +88,19 @@
                                 // hide keyboard and input
                                 document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"0 0 0"));
 
-                                // show sphere in original position (sync w ammo physics and fill w data first item in list)
+                                // show action booths
                                 document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
 
+                                // show sphere in original position (sync w ammo physics and fill w data first item in list)
+                                document.querySelector('#current_node_label').setAttribute('value', res.data[0].name ? `${res.data[0].name}`:"NO NODE FOUND");
                                 document.querySelector("#current_node").setAttribute('visible',"true");
+                                document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
 
                             }else{
-                                
+
                                 document.querySelector("#current_node").setAttribute('visible',"false");
                             }
 
-                            
-
-                            
-                             
-                            // if search sucess then: 
-
-                                // hide keyboard and input
-
-                                // show sphere in original position (sync w ammo physics and fill w data first item in list)
-                                // show action booths
-                            
-                            // if not keep current node view hidden 
-
-                            /*document.querySelector('#current_node').setAttribute('visible', res.data[0] ? "true":"false");
-                            document.querySelector('#current_node').setAttribute('position', res.data[0] ? "0 1 -1.5":"0 1 -1.5");
-                            //document.querySelector('#current_node').components["dynamic-body"].syncToPhysics();
-
-                            document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
-                            document.querySelector('#current_node_label').setAttribute('visible', res.data[0] ? "true":"false");
-                            //teleport node back to the center_booth
-                            document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
-                            keyboard.setAttribute('scale',res.data[0] ? "0 0 0":"1.5 1.5 1.5" );
-                            input1.setAttribute('visible',res.data[0] ? "false":"true" );
-                            toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
-                            toast.show();*/
                         });
                 });
             
