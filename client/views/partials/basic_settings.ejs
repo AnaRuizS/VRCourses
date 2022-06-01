@@ -44,7 +44,10 @@
     <a-entity mixin="controller-l" class="leftController" hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
         <%- include('hand_menu') %>      
     </a-entity>
-    <a-toast autoshow= 'false' message="" position="0 2 -1" action="OK"></a-toast>
+    <a-toast id="search-toast" message=""
+        action="OK"
+        autoshow="false"
+    ></a-toast>
 </a-entity>
 <!--END CAMERA AND MOTION SETTINGS -->
 
