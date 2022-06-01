@@ -114,27 +114,6 @@
 
                     if (target_id=== "current_node"){
                         document.querySelectorAll(".info-screen").forEach(e => e.parentNode.removeChild(e));
-                        
-                        var add_booth=document.createElement('a-entity');
-                                add_booth.setAttribute('geometry',"primitive: cylinder; height: 0.03; radius: 0.2");
-                                add_booth.setAttribute("material","color:green");
-                                add_booth.setAttribute("ammo-body","type: static; emitCollisionEvents: true" );
-                                add_booth.setAttribute("ammo-shape","type: box");
-                                add_booth.addEventListener('collidestart', function(evt){
-                                    var target2=evt.detail.targetEl;
-
-                                    if (target2.getAttribute('id') === "current_node"){
-                                        var n=document.querySelector("#current_node");
-                                        n.parentNode.removeChild(n);
-                                    }
-                                });
-                                add_booth.setAttribute('position', "-0.5 0.78 -0.9");
-                                add_booth.setAttribute('class', "action-button");
-
-                        var sceneEl = document.querySelector('a-scene');
-
-                        sceneEl.appendChild(add_booth);
-
                     }
 
                 });
