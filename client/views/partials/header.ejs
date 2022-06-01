@@ -84,9 +84,12 @@
                             toast.show();
 
                             // if search sucess then
-                            console.log(res.data);
+                            if (res.data.length !== 0 ){
+                                // hide keyboard and input
+                                document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"0 0 0"));
+                            }
 
-                            //document.querySelectorAll(".info-screen").forEach(e => e.parentNode.removeChild(e));
+                            
 
                             
                              
