@@ -92,7 +92,7 @@
                                 document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
 
                                 // show sphere in original position (sync w ammo physics and fill w data first item in list)
-                                document.querySelector('#current_node_label').setAttribute('value', res.data[0].name ? `${res.data[0].name}`:"NO NODE FOUND");
+                                document.querySelector('#current_node_label').setAttribute('value', res.data[0] ? `${res.data[0].name}`:"NO NODE FOUND");
                                 document.querySelector("#current_node").setAttribute('visible',"true");
                                 document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
 
