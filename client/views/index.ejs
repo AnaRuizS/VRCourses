@@ -82,6 +82,20 @@
     <a-rounded id="screen_c" width="1" height="1" radius="0.05" color="#cccccc" position="-0.5 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
     <a-rounded id="screen_r" width="1" height="1" radius="0.05" rotation="0 315 0" color="#cccccc" 
         position="0.62851 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
+
+    
+    <!-- Graph creation view -->>
+    <a-entity forcegraph="json-url: client/current_graph.json;
+                            num-dimensions: 3;
+                            node-rel-size: 1;
+                            node-opacity: 1;
+                            node-resolution: 12; 
+                            link-opacity: 0.25; 
+                            link-width:0;
+                            node-auto-color-by: type;
+                            on-node-hover: node => document.querySelector('#forcegraph-tooltip').setAttribute('value', node ? `${node.label} \n (${node.type})` : 'Hover for node info');"
+        position="0 0.5 -10" shadow scale="0.1 0.1 0.1"> 
+    </a-entity>
     
 </a-scene>
 <script type="text/javascript">

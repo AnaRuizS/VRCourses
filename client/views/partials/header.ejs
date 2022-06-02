@@ -27,6 +27,7 @@
     </script>
 
     <script type="text/javascript">
+
         // Change color when raycaster hovers (left hand control)
         AFRAME.registerComponent('change-color-on-hover', {
             schema: {
@@ -155,6 +156,27 @@
                     document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");
                     
 
+                });
+            }
+        });
+
+        AFRAME.registerComponent('add-to-graph', {
+            init: function () {
+                this.el.addEventListener('collidestart', function (evt) {
+                    // show dialog (add- cancel?)
+                    // if add clicked then add to file
+
+                    // disappear node and add to list
+                    document.querySelector("#current_node").setAttribute('visible',"false");
+
+                    // go to search screen
+                    document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"0 0 0"));
+                    document.querySelector("#current_node").setAttribute('visible',"false");
+                    document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"0 0 0"));
+                    
+                    //show node search elements
+                    document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+                    document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");
                 });
             }
         });
