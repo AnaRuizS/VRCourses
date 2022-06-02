@@ -108,7 +108,7 @@
                                 document.querySelector("#current_node").setAttribute('visible',"false");
                             }
 
-                        });
+                        }).catch( err => console.error(`Fetch problem: ${err.message}`) );
                 });
             
             }
