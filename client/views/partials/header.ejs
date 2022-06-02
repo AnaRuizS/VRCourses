@@ -117,7 +117,9 @@
 
         AFRAME.registerComponent('transform-if-collided', {
             init: function () {
-                this.el.addEventListener('collidestart', function (evt) {
+                var el = this.el;
+
+                el.addEventListener('collidestart', function (evt) {
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
                     
@@ -148,7 +150,8 @@
 
         AFRAME.registerComponent('back-to-search', {
             init: function () {
-                this.el.addEventListener('collidestart', function (evt) {
+                var el = this.el;
+                el.addEventListener('collidestart', function (evt) {
                     // hide all elements in node view
                     document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"0 0 0"));
                     document.querySelector("#current_node").setAttribute('visible',"false");
@@ -165,7 +168,8 @@
 
         AFRAME.registerComponent('add-to-graph', {
             init: function () {
-                this.el.addEventListener('collidestart', function (evt) {
+                var el = this.el;
+                el.addEventListener('collidestart', function (evt) {
                     // show dialog (add- cancel?)
                     // if add clicked then add to file
                     console.log("collided with add node");
