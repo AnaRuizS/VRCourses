@@ -66,7 +66,7 @@
     <a-keyboard class="search-view" position="-0.75 0.85 -0.75" rotation="-35 0 0" scale="1 1 1" visible='true'></a-keyboard>
     <a-input id='input-1' class="search-view" position="-0.45 1.35 -1" placeholder="Search for node" color="black" width="0.6" visible="true"
     onclick="this.focus()">
-        <a-button id="go-button" class="search-view" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked></a-button>
+        <a-button id="go_button" class="search-view" position="0.6 0 0" value="go" width='0.3' scale="0.5 0.5 0.5" search-clicked></a-button>
     </a-input>
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
@@ -82,58 +82,25 @@
     <a-rounded id="screen_c" width="1" height="1" radius="0.05" color="#cccccc" position="-0.5 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
     <a-rounded id="screen_r" width="1" height="1" radius="0.05" rotation="0 315 0" color="#cccccc" 
         position="0.62851 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
-
-
-    <!--var add_booth=document.createElement('a-entity');
-                                add_booth.setAttribute('geometry',"primitive: cylinder; height: 0.03; radius: 0.2");
-                                add_booth.setAttribute("material","color:green");
-                                add_booth.setAttribute("ammo-body","type: static; emitCollisionEvents: true" );
-                                add_booth.setAttribute("ammo-shape","type: box");
-                                add_booth.addEventListener('collidestart', function(evt){
-                                    var target2=evt.detail.targetEl;
-
-                                    if (target2.getAttribute('id') === "current_node"){
-                                        var n=document.querySelector("#current_node");
-                                        n.parentNode.removeChild(n);
-                                    }
-                                });
-                                add_booth.setAttribute('position', "-0.5 0.78 -0.9");
-                                add_booth.setAttribute('class', "action-button");
-
-                        var sceneEl = document.querySelector('a-scene');
-
-                        sceneEl.appendChild(add_booth);-->
-
-    
     
 </a-scene>
 <script type="text/javascript">
 
     window.onload = function(event) {
         var input1= document.querySelector('#input-1');
-        var str="";
+        var s="";
         var keyboard = document.querySelector("a-keyboard");
-        /*var toast = document.querySelector('a-toast');
-
-        toast.addEventListener('actionclick', ()=>{
-            toast.hide();
-
-        });*/
 
         keyboard.addEventListener('input', (e)=>{
-            str += e.detail;
+            s += e.detail;
             input1.setAttribute('value', str);
         });
 
         keyboard.addEventListener('backspace', (e)=>{
-            str = str.slice(0, -1);
+            s = str.slice(0, -1);
             input1.setAttribute('value', str);
         });
-
     };
-    
-
-
 
 </script>
 
