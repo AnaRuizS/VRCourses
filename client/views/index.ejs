@@ -116,6 +116,52 @@
             input1.setAttribute('value', s);
             return true;
         });
+
+        var search_button = document.querySelector("#go_button");
+
+        search_button.addEventListener('click', ()=> {
+
+            console.log ("search button clicked!");
+
+            let input1=document.querySelector("#input-1");
+            let input_string=input1.getAttribute('value');
+
+            fetch('/node_search', {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify({input: input_string})
+                })
+                .then(res=>res.json())
+                .then(res =>{
+                    
+                    // show toast with info
+                    var toast = document.querySelector("#search-toast");
+                    toast.setAttribute('message',res.data[0] ? "Node found!": "Please try another query");
+                    toast.show();
+
+                    // if search sucess then
+                    if (res.data.length !== 0 ){
+                        // hide keyboard and input
+                        document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"0 0 0"));
+                        document.querySelector("#go_button").setAttribute('scale',"0 0 0");
+
+                        // show action booths
+                        document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+                        // show info screens
+                        document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"1 1 1"));
+
+                        // show sphere in original position (sync w ammo physics and fill w data first item in list)
+                        document.querySelector('#current_node_label').setAttribute("text__1", 'value', `${res.data[0].name}`);
+                        document.querySelector("#current_node").setAttribute('visible',"true");
+                        document.querySelector('#current_node').setAttribute('object-data', res.data[0] ? "{source: 'https://3quarksdaily.com/3quarksdaily/2013/03/the-inscrutable-brilliance-of-anne-carson.html'}":"{}");
+
+                    }else{
+
+                        document.querySelector("#current_node").setAttribute('visible',"false");
+                    }
+
+                }).catch( err => console.error(`Fetch problem: ${err.message}`) );
+        });
     };
 
 </script>
