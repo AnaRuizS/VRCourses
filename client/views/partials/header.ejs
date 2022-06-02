@@ -87,12 +87,12 @@
                             if (res.data.length !== 0 ){
                                 // hide keyboard and input
                                 document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"0 0 0"));
+                                document.querySelector("#go_button").setAttribute('scale',"0 0 0");
 
                                 // show action booths
                                 document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
                                 // show info screens
                                 document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"1 1 1"));
-                                document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");
 
                                 // show sphere in original position (sync w ammo physics and fill w data first item in list)
                                 document.querySelector('#current_node_label').setAttribute("text__1", 'value', `${res.data[0].name}`);
@@ -152,6 +152,7 @@
                     
                     //show node search elements
                     document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+                    document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");
                     
 
                 });
