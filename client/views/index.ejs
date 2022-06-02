@@ -36,6 +36,7 @@
     ></a-mixin>
 
     <a-mixin id="cancel-booth"
+                back-to-search
                 geometry="primitive: cylinder; height: 0.03; radius: 0.15"
                 material="color: red"
                 ammo-body="type: static; emitCollisionEvents: true" 
@@ -70,9 +71,17 @@
     
     <a-entity id="main-table" position="0 0.75 -0.9" mixin = "static-obj"></a-entity>
 
+    <!-- current node view -->
+        <!-- action booths -->
     <a-entity id="center_booth" class="node-view" position="0 0.78 -0.9" mixin="info-booth" scale="0 0 0"></a-entity>
     <a-entity id="left_booth" class="node-view" position="-0.5 0.78 -0.9" mixin="add-booth" scale="0 0 0"></a-entity>
     <a-entity id="right_booth" class="node-view" position="0.5 0.78 -0.9" mixin="cancel-booth" scale="0 0 0"></a-entity>
+        <!-- info screens -->
+    <a-rounded id="screen_l" width="1" height="1" radius="0.05"
+        rotation="0 45 0" color="#cccccc" position="-1.325 1 -1.29939" class="info-screen" scale="0 0 0"></a-rounded>
+    <a-rounded id="screen_c" width="1" height="1" radius="0.05" color="#cccccc" position="-0.5 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
+    <a-rounded id="screen_r" width="1" height="1" radius="0.05" rotation="0 315 0" color="#cccccc" 
+        position="0.62851 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
 
 
     <!--var add_booth=document.createElement('a-entity');

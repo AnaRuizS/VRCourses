@@ -90,6 +90,8 @@
 
                                 // show action booths
                                 document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+                                // show info screens
+                                document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"1 1 1"));
 
                                 // show sphere in original position (sync w ammo physics and fill w data first item in list)
                                 document.querySelector('#current_node_label').setAttribute("text__1", 'value', `${res.data[0].name}`);
@@ -119,36 +121,7 @@
                         var sceneEl = document.querySelector('a-scene');
 
                         if (data!=="{}"){
-                            var screenl = document.createElement('a-rounded');
-                            screenl.setAttribute('width', "1");
-                            screenl.setAttribute('height', "1");
-                            screenl.setAttribute('radius', "0.05");
-                            screenl.setAttribute('rotation', "0 45 0");
-                            screenl.setAttribute('color', "#cccccc");
-                            screenl.setAttribute('position', "-1.5 1 -1.4");
-                            screenl.setAttribute('class', "info-screen");
-
-                            var screenc = document.createElement('a-rounded');
-                            screenc.setAttribute('width', "1");
-                            screenc.setAttribute('height', "1");
-                            screenc.setAttribute('radius', "0.05");
-                            screenc.setAttribute('rotation', "0 0 0");
-                            screenc.setAttribute('color', "#cccccc");
-                            screenc.setAttribute('position', "-0.5 1 -2");
-                            screenc.setAttribute('class', "info-screen");
-
-                            var screenr = document.createElement('a-rounded');
-                            screenr.setAttribute('width', "1");
-                            screenr.setAttribute('height', "1");
-                            screenr.setAttribute('radius', "0.05");
-                            screenr.setAttribute('rotation', "0 315 0");
-                            screenr.setAttribute('color', "#cccccc");
-                            screenr.setAttribute('position', "0.75 1 -2");
-                            screenr.setAttribute('class', "info-screen");
-
-                            sceneEl.appendChild(screenl);
-                            sceneEl.appendChild(screenc);
-                            sceneEl.appendChild(screenr);
+                            // add data to info screens
                         }
 
                     }
@@ -159,11 +132,26 @@
                 this.el.addEventListener('collideend', function (evt) {
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
-                    //console.log("collision with booth ended");
 
                     if (target_id=== "current_node"){
-                        document.querySelectorAll(".info-screen").forEach(e => e.parentNode.removeChild(e));
+                        // remove data from info screens
                     }
+
+                });
+            }
+        });
+
+        AFRAME.registerComponent('back-to-search', {
+            init: function () {
+                this.el.addEventListener('collidestart', function (evt) {
+                    // hide all elements in node view
+                    document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"0 0 0"));
+                    document.querySelector("#current_node").setAttribute('visible',"false");
+                    document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"0 0 0"));
+                    
+                    //show node search elements
+                    document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"1 1 1"));
+                    
 
                 });
             }
