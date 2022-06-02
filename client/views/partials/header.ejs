@@ -185,20 +185,32 @@
                     
                     if (target_id=== "current_node"){
                         // show dialog (add- cancel?)
+
                         // if add clicked then add to file
-                        console.log(current_graph);
+                        var data = target_id.getAttribute('object-data');
+                        document.querySelector("#current_node").setAttribute('visible',"false");
+
+                        var new_node = document.createElement('a-sphere');
+                        var sceneEl = document.querySelector('a-scene');
+
+                        new_node.setAttribute('position', "0 0.5 -10");
+                        new_node.setAttribute('class', "nodes-graph");
+                        new_node.setAttribute('radius', "0.2");
+                        new_node.setAttribute('color', "yellow");
+
+                        sceneEl.appendChild(new_node);
 
                         // disappear node and add to list
-                        /*document.querySelector("#current_node").setAttribute('visible',"false");
+                        
 
-                        // go to search screen
+                        /*// go to search screen
                         document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"0 0 0"));
                         document.querySelector("#current_node").setAttribute('visible',"false");
                         document.querySelectorAll(".info-screen").forEach(e => e.setAttribute('scale',"0 0 0"));
                         
                         //show node search elements
                         document.querySelectorAll(".search-view").forEach(e => e.setAttribute('scale',"1 1 1"));
-                    document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");*/
+                        document.querySelector("#go_button").setAttribute('scale',"0.5 0.5 0.5");*/
                     }
                 });
             }
