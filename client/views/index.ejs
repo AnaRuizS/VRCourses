@@ -85,7 +85,7 @@
         position="0.62851 1 -2" class="info-screen" scale="0 0 0"></a-rounded>
 
     
-    <!-- Graph creation view -->
+    <!-- Graph creation view 
     <a-entity forcegraph="json-url: client/current_graph.json;
                             num-dimensions: 3;
                             node-rel-size: 1;
@@ -94,7 +94,7 @@
                             link-opacity: 0.25; 
                             link-width:0;
                             "
-        position="0 0.5 -10" shadow scale="0.1 0.1 0.1"> 
+        position="0 0.5 -10" shadow scale="0.1 0.1 0.1"> -->
     </a-entity>
     
 </a-scene>
@@ -108,11 +108,13 @@
         keyboard.addEventListener('input', (e)=>{
             s += e.detail;
             input1.setAttribute('value', s);
+            return true;
         });
 
         keyboard.addEventListener('backspace', (e)=>{
             s = s.slice(0, -1);
             input1.setAttribute('value', s);
+            return true;
         });
     };
 
