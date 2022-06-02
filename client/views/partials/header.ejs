@@ -29,7 +29,7 @@
     <script type="text/javascript">
 
         //try global object
-        var current_graph={"nodes":[], "edges":[]};
+        //var current_graph={"nodes":[], "edges":[]};
 
         // Change color when raycaster hovers (left hand control)
         AFRAME.registerComponent('change-color-on-hover', {
@@ -168,7 +168,7 @@
                 this.el.addEventListener('collidestart', function (evt) {
                     // show dialog (add- cancel?)
                     // if add clicked then add to file
-                    console.log(current_graph);
+                    console.log("collided with add node");
 
                     // disappear node and add to list
                     /*document.querySelector("#current_node").setAttribute('visible',"false");
