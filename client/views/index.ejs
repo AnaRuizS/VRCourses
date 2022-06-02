@@ -93,12 +93,12 @@
 
         keyboard.addEventListener('input', (e)=>{
             s += e.detail;
-            input1.setAttribute('value', str);
+            input1.setAttribute('value', s);
         });
 
         keyboard.addEventListener('backspace', (e)=>{
-            s = str.slice(0, -1);
-            input1.setAttribute('value', str);
+            s = s.slice(0, -1);
+            input1.setAttribute('value', s);
         });
     };
 
