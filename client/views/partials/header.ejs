@@ -159,7 +159,7 @@
                     var target=evt.detail.targetEl;
                     var target_id= target.getAttribute('id');
                     
-                    if (target_id=== "current_node" || target_id ==="controller_r"){
+                    if (target_id=== "current_node"){
                         // hide all elements in node view
                         document.querySelectorAll(".node-view").forEach(e => e.setAttribute('scale',"0 0 0"));
                         document.querySelector("#current_node").setAttribute('visible',"false");
