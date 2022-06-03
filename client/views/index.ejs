@@ -69,7 +69,7 @@
     </a-sphere>
 
     <a-sphere object-data="{}"
-            ammo-body = "type: dynamic" 
+            ammo-body = "type: static" 
             ammo-shape=" type: box" 
             mixin="node-actions" 
             color="gray" 
@@ -84,12 +84,12 @@
     </a-sphere>
 
     <a-sphere object-data="{}"
-            ammo-body = "type: dynamic" 
+            ammo-body = "type: static" 
             ammo-shape=" type: box" 
             mixin="node-actions" 
             color="gray" 
             radius="0.2" 
-            position="0 0 -10.5">
+            position="0 0.5 -10.5">
         <a-entity
             geometry="primitive: plane; width:0.5 ; height: auto"
             material="color: #212121"
@@ -130,6 +130,11 @@
         position="0 0.5 -10" shadow scale="0.1 0.1 0.1"> 
     </a-entity>-->
     
+    <a-entity id="floor2" position="0 0 -10" geometry="primitive: box; depth: 10; height: 0.05; width: 15"
+        material="color: cyan"
+        ammo-body="type: static" 
+        ammo-shape="type: box"></a-entity>
+
 </a-scene>
 <script type="text/javascript">
 
