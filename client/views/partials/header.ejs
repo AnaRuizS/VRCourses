@@ -225,9 +225,9 @@
                     console.log(pos);
                     el.setAttribute('color', 'green');
 
-                    /*var new_edge= document.createElement('a-tube');
-                    new_edge.setAttribute("path", "-1.8 -0.5 0, 0 0.75 0");
-                    new_edge.setAttribute("radius", "0.05");*/
+                    var new_edge= document.createElement('a-tube');
+                    new_edge.setAttribute("path", `${pos.x} ${pos.y} ${pos.z}, ${pos.x+1} ${pos.y} ${pos.z+1}`);
+                    new_edge.setAttribute("radius", "0.05");
 
                 });
             }
