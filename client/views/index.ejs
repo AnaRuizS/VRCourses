@@ -13,6 +13,12 @@
                 event-set__hoveroff="_event: hover-end; opacity: 1; transparent: false"
     ></a-mixin>
 
+    <a-mixin id="node-actions"
+                hoverable draggable
+                grabbable = "constraintComponentName: ammo-constraint;"
+                draw-edge-on-hover
+    ></a-mixin>
+
     <a-mixin id="static-obj"
                 geometry="primitive: box; depth: 0.75; height: 0.05; width: 1.5"
                 material="color: gray"
