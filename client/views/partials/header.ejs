@@ -217,13 +217,13 @@
 
         });
 
-        AFRAME.registerComponent('add-to-graph', {
+        AFRAME.registerComponent('draw-edge-on-hover', {
             init: function () {
                 var el = this.el;
                 el.addEventListener('hover-start', function(evt){
                     var pos = el.getAttribute('position');
                     console.log(pos);
-
+                    el.setAttribute('color', 'green');
 
                     /*var new_edge= document.createElement('a-tube');
                     new_edge.setAttribute("path", "-1.8 -0.5 0, 0 0.75 0");
