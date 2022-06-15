@@ -217,19 +217,15 @@
 
         });
 
-        AFRAME.registerComponent('draw-edge-on-hover', {
+        AFRAME.registerComponent('draw-edge-on-click', {
+
             init: function () {
                 var el = this.el;
-                el.addEventListener('hover-start', function(evt){
-                    var pos = el.getAttribute('position');
-                    console.log(pos);
-                    el.setAttribute('color', 'green');
+                var new_edge= document.createElement('a-tube');
+            },
 
-                    var new_edge= document.createElement('a-tube');
-                    new_edge.setAttribute("path", `${pos.x} ${pos.y} ${pos.z}, ${pos.x+1} ${pos.y} ${pos.z+1}`);
-                    new_edge.setAttribute("radius", "0.05");
-
-                });
+            tick: function(){
+                
             }
         });
 
