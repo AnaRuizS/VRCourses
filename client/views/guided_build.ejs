@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 <a-scene physics='driver: ammo; debug: true;' background="color: #FAFAFA">
-
+    <!-- Asset with 3d room for guided build -->
     <a-assets>
         <a-asset-item id="room" src="./assets/warehouse.glb" ></a-asset-item>
     </a-assets>
@@ -8,7 +8,14 @@
     <%- include('partials/basic_settings') %>
     <a-entity light="castShadow: true" position="3.47677 18.94586 2.24765"></a-entity>
 
-    <a-gltf-model src="#room" position="-45 0.5 11.14913" scale="0.001 0.001 0.001"></a-gltf-model>
+    <!-- Room entity and floor for physics -->
+    <a-gltf-model src="#room" position="-45 0.25 11.14913" scale="0.001 0.001 0.001"></a-gltf-model>
+
+    <a-entity id="floor" position="0 0 0" geometry="primitive: box; depth: 10; height: 0.25; width: 15"
+        material="color: cyan"
+        ammo-body="type: static" 
+        ammo-shape="type: box"></a-entity>
+
     <a-sphere color="yellow" radius="0.2" position="0 1 1.5"></a-sphere>
 
 
