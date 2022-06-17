@@ -225,7 +225,17 @@
             },
 
             tick: function(){
-                
+
+            }
+        });
+
+        AFRAME.registerComponent('menu-clicked',{
+            init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', ()=> {
+                    console.log("clicked");
+                });
             }
         });
 
