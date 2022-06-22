@@ -44,11 +44,11 @@
                 var el = this.el;  // a-frame entity
                 var defaultColor = el.getAttribute('color');
         
-                el.addEventListener('mouseenter', function () {
+                el.addEventListener('raycaster-intersected', function () {
                     el.setAttribute('color', data.color);
                 });
         
-                el.addEventListener('mouseleave', function () {
+                el.addEventListener('raycaster-intersected-cleared', function () {
                     el.setAttribute('color', defaultColor);
                 });
             }
