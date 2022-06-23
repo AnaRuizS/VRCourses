@@ -24,12 +24,12 @@
 
     <a-rounded id="search" position="-0.17 0 0.16" width='0.1' height="0.20" color="teal" radius="0.005" rotation="0 70 0">
     </a-rounded>
-    <a-sphere class="clickable" color="yellow" radius="0.025" rotation="0 0 90" position="-0.14 0.1 0.11" change-color-on-hover="color: gray">
-        <a-entity
+    <a-sphere class="clickable" color="yellow" radius="0.025" rotation="0 0 0" position="-0.14 0.1 0.11" change-color-on-hover="color: gray">
+        <a-entity id ="current_node_label"
             geometry="primitive: plane; width:0.05 ; height: auto"
             material="color: #212121"
-            text__1="align: center; color: white; value: no_node; wrapCount: 20" 
-            position="0 0.03 0.03">
+            text__1="align: center; color: white; value: NO NODE SELECTED; wrapCount: 20" 
+            position="0 0.03 0">
         </a-entity>
     </a-sphere>
     <a-entity id="keyboard" super-keyboard="hand: #controller_r ; imagePath:./assets/images/keyboard; width: 0.2" position="-0.09 0.1 0.04" rotation="0 45 90"></a-entity>
