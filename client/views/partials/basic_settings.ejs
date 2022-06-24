@@ -31,6 +31,17 @@
                 colliderEndEvent: collideend;
                 colliderEndEventProperty: targetEl;">
 </a-mixin>
+<!-- Aternative mixin for hands without physics-->
+<a-mixin id="controller-r2"
+    raycaster="
+    showLine: true;
+    far:10 ;
+    interval: 0;
+    objects: .clickable, a-rounded"
+    visible="true"
+    sphere-collider="objects: a-sphere"
+    super-hands>
+</a-mixin>
 <!-- END SETTINGS FOR CONTROLLERS-->
 
 <!-- BASIC CAMERA AND MOTION SETTINGS -->
@@ -39,7 +50,7 @@
     <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: false">
     </a-entity>
     <!-- controllers-->
-    <a-entity mixin="controller-r" id="controller_r" class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
+    <a-entity mixin="controller-r2" id="controller_r" class="rightController" hand-controls="hand: right; handModelStyle: lowPoly; color: #cccccc"></a-entity>
     <a-entity mixin="controller-l" class="leftController"  hand-controls="hand: left; handModelStyle: lowPoly; color: #cccccc">
         <%- include('hand_menu') %>      
     </a-entity>
