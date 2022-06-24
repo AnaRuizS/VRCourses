@@ -30,11 +30,9 @@
     <a-rounded id="next" position="-0.145 0.17 0.10" width='0.02' height="0.02" color="#171717" radius="0.005" rotation="0 70 90"
         change-color-on-hover="color: blue"></a-rounded>
 
-    <a-sphere class="clickable" 
-        grabbable
+    <a-sphere class="clickable"
         color="yellow" radius="0.025" rotation="0 70 90" position="-0.14 0.1 0.11" 
         change-color-on-hover="color: gray">
-
         <a-entity id ="current_node_label"
             geometry="primitive: plane; width:0.08 ; height: auto"
             material="color: #212121"
@@ -42,6 +40,7 @@
             position="0 0.03 0">
         </a-entity>
     </a-sphere>
+
     <a-entity id="keyboard" super-keyboard="hand: #controller_r ; imagePath:./assets/images/keyboard; width: 0.2" position="-0.09 0.1 0.04" rotation="0 45 90"></a-entity>
 </a-circle>
 <a-torus color="teal" arc="360" radius="0.038" radius-tubular="0.005" position='0.01 0.01 0.09' rotation="0 0 30" segments-tubular="6"></a-torus>
