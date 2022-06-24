@@ -30,7 +30,10 @@
     <a-rounded id="next" position="-0.145 0.17 0.10" width='0.02' height="0.02" color="#171717" radius="0.005" rotation="0 70 90"
         change-color-on-hover="color: blue"></a-rounded>
 
-    <a-sphere class="clickable" grabbable = "constraintComponentName: ammo-constraint;"
+    <a-sphere class="clickable" 
+        grabbable = "constraintComponentName: ammo-constraint;" 
+        ammo-body = "type: static" 
+        ammo-shape=" type: box" 
         color="yellow" radius="0.025" rotation="0 70 90" position="-0.14 0.1 0.11" 
         change-color-on-hover="color: gray">
 
