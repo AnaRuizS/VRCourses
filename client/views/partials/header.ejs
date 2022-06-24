@@ -242,6 +242,18 @@
             }
         });
 
+        AFRAME.registerComponent('real-time-search',{
+            intit:function(){
+                var el = this.el;
+
+                el.addEventListener('superkeyboardchange', (evt)=> {
+                    
+                    console.log(evt);
+                });
+
+            }
+        });
+
     </script>
   </head>
   <body>
